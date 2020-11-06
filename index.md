@@ -1,37 +1,50 @@
-## Welcome BENJA LE TOUFFE
+## Bienvenide!
 
-You can use the [editor on GitHub](https://github.com/SirCrocker/Le-Touffe/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+En esta página está la recolección de los resumenes y apuntes hechos por nosotros para los cursos que cursamos. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Está disponible tanto la descarga directa PDF (Versión GitHub), como la dirección a Overleaf que siempre tendrá la última versión
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Apunte Cálculo
 
-```markdown
-Syntax highlighted code block
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Apunte_Calculo.pdf) | 
+[Dirección Overleaf](https://es.overleaf.com/read/zgqpccknccbh)
 
-# Header 1
-## Header 2
-### Header 3
+Incluye:
+- Resultado útiles 
+- Cálculo en Varias Variables
+- Calculo Avanzado y Aplicaciones
+- Ejercicios con solución para algunos temas
 
-- Bulleted
-- List
+### Apunte Electromagnetismo
 
-1. Numbered
-2. List
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Apunte_Electro.21.34.37.pdf) | 
+[Dirección Overleaf](https://es.overleaf.com/read/jgrbxgybxdvb)
 
-**Bold** and _Italic_ and `Code` text
+Incluye:
+- Resultado útiles 
+- Sistema de Coordenadas
+- Tabla de Primitivas
+- Teoría hasta materiales dieléctricos
+- Ejercicios con solución para todos los temas
 
-[Link](url) and ![Image](src)
-```
+### Apunte Economía
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Apunte_Econo.pdf) | 
+[Dirección Overleaf](https://www.overleaf.com/read/bhgfgpwdxwhf)
 
-### Jekyll Themes
+Incluye:
+- Módulos del 0 al 5
+- Links a videos EOL
+- Glosario de términos
+- 1 Ejemplo
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SirCrocker/Le-Touffe/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Resumen termodinámica
 
-### Support or Contact
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Termodinamica.pdf) | 
+[Dirección Overleaf](https://www.overleaf.com/read/fjkwbxggwtvs)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Incluye:
+- Términos varios
+- Notación
+- Ecuaciones
