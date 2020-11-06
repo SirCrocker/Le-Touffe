@@ -1,0 +1,420 @@
+\subsection{Soluciones}
+
+\sol{1}\\
+% Hice la parte de demostrar que la fuerza en campo uniforme es nula, pero no puedo hacer la otra. 
+
+% Se hace diciendo que un dipolo está compuesto de dos cargas opuestas y que por lo tanto la fuerza neta será la suma de las fuerzas sobre las cargas, F_Q + F_{-Q} = QE - QE =0 (se puede desarrollar con cálculo)
+
+$a)$ Para un campo eléctrico uniforme $\Vec{E}$, puesto que un dipolo se compone de 2 cargas opuestas $q$ y $-q$, se verifica que la fuerza neta producto de $\Vec{E}$ sobre el dipolo es nula
+
+\[\Vec{F}=\Vec{F}_{+}+\Vec{F}_{-} = q\Vec{E}-q\Vec{E}=0\]
+\bigbreak
+Definiendo $\Vec{d}$ como el vector que une a las cargas, tal que $\Vec{p}=q\Vec{d}$, si $\Vec{E}$ no es uniforme, se tiene que
+\begin{equation}
+\begin{split}
+    \Vec{F} &= q\Vec{E}(\Vec{r}_{+})-q\Vec{E}(\Vec{r}_{-})\\
+    &= q\Vec{E}(\Vec{r}_{-}+\Vec{d})-q\Vec{E}(\Vec{r}_{-})\\
+    &= q(\Vec{E}(\Vec{r}_{-}+\Vec{d})-\Vec{E}(\Vec{r}_{-}))\\
+\end{split}
+\nonumber
+\end{equation}
+
+Si $\Vec{d}$ tiende a 0, entonces
+
+\begin{equation}
+\begin{split}
+    \Vec{F} &= q
+    \left(d_x\frac{\partial\Vec{E}}{\partial x}
+    (\Vec{r}_{-})+d_y\frac{\partial\Vec{E}}{\partial y}
+    (\Vec{r}_{-})+d_z\frac{\partial\Vec{E}}{\partial z}
+    (\Vec{r}_{-})\right)\\
+    &=\left(p_x\frac{\partial\Vec{E}}{\partial x}
+    (\Vec{r}_{-})+p_y\frac{\partial\Vec{E}}{\partial y}
+    (\Vec{r}_{-})+p_z\frac{\partial\Vec{E}}{\partial z}
+    (\Vec{r}_{-})\right)\\
+    &= (\mathrm{J}\Vec{E})\Vec{p}
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+$b)$ El torque está dado por
+
+\begin{equation}
+\begin{split}
+    \Vec{\tau}&=\Vec{r}\times\Vec{F}\\
+    &=\Vec{r}_{+}\times\Vec{F}_{+}+
+    \Vec{r}_{-}\times\Vec{F}_{-}\\
+    &=(\Vec{r}_{+}-\Vec{r}_{-})\times q\Vec{E}\\
+    &= \Vec{p}\times\Vec{E}
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+
+$c)$ Usando el vector $\Vec{d}$ definido en $a)$, tal que $\Vec{d}\to 0$, la energía del dipolo es
+
+\begin{equation}
+\begin{split}
+    U &= q(V(\Vec{r}_{+})-V(\Vec{r}_{-}))\\
+    &= q(V(\Vec{r}_{-}+\Vec{d})-V(\Vec{r}_{-}))\\
+    &= q(d_x\frac{\partial V}{\partial x}+d_y\frac{\partial V}{\partial y}+d_z\frac{\partial V}{\partial z})\\
+    &= p_x\frac{\partial V}{\partial x}+p_y\frac{\partial V}{\partial y}+p_z\frac{\partial V}{\partial z}\\
+    &= \Vec{p}\cdot\nabla V\\
+    &= -\Vec{p}\cdot\Vec{E}
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+
+\bigbreak
+
+\sol{2}
+\bigbreak
+\begin{enumerate}[label=\alph*)]
+    %a)
+    \item Asumiendo que el dipolo se compone de 2 cargas ubicadas en $d\hat{z}$ y $-d\hat{z}$ tomando el centro del anillo como origen, el potencial en un punto arbitrario del anillo producto del dipolo es
+    
+    \[V = \frac{q}{4\pi\epsilon_o}\left(\frac{1}{\sqrt{a^2+d^2}} -\frac{1}{\sqrt{a^2+d^2}}\right)=0\]
+    
+    de modo que el potencial en todo el anillo es nulo.
+    
+    %b)
+    \item Como el potencial es nulo, el campo eléctrico del dipolo sobre el anillo también es nulo y por tanto no ejerce fuerza sobre este.
+    
+    %c)
+    \item El campo eléctrico del anillo sobre el dipolo es
+
+    \[\Vec{E}_a = \frac{1}{4\pi\epsilon_o}\left( \frac{Qd}{(a^2+d^2)^{3/2}}-\frac{Qd}{(a^2+d^2)^{3/2}} \right)\hat{z}=0\]
+
+    Por lo que el anillo no ejerce fuerza sobre el dipolo. Cumpliendo con la tercera Ley de Newton, ya que al no haber una fuerza sobre el anillo este no ejerce una de reacción.
+
+\end{enumerate}
+\bigbreak
+\bigbreak
+\sol{3}\\
+\bigbreak
+$a)$ La carga total está dada por
+
+\begin{equation}
+\begin{split}
+    Q &= \int^\pi_0\int^{2\pi}_0\sigma_o(1+\cos{\theta})
+    R^2\sin{\theta}\,d\phi d\theta\\
+    &= 2\pi\sigma_oR^2\int^\pi_0\sin{\theta}+\cos{\theta}
+    \sin{\theta}\,d\theta\\
+    &= 4\pi\sigma_oR^2
+\end{split}
+\nonumber
+\end{equation}
+
+El momento dipolar está dado por
+
+\begin{equation}
+\begin{split}
+    \Vec{p} &= \int^\pi_0\int^{2\pi}_0\sigma_o(1+\cos{\theta})
+    R^2\sin{\theta}\Vec{r}\,d\phi d\theta\\
+    &= \sigma_oR^3\int^\pi_0\int^{2\pi}_0(1+\cos{\theta})
+    \sin{\theta}(\sin{\theta}\cos{\phi}\hat{x}+\sin{\theta}
+    \sin{\phi}\hat{y}+\cos{\theta}\hat{z})\,d\phi d\theta\\
+    &= \sigma_oR^3\int^\pi_0 2\pi(1+\cos{\theta})\sin{\theta}
+    \cos{\theta}\hat{z}\,d\theta\\
+    &= 2\pi\sigma_oR^3\int^\pi_0 (\sin{\theta}\cos{\theta}+
+    \sin{\theta}\cos^2{\theta})\hat{z}\,d\theta\\
+    &= \frac{4\pi\sigma_oR^3}{3}\hat{z}
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+$b)$ El potencial eléctrico para puntos alejados se puede aproximar por
+
+\begin{equation}
+\begin{split}
+    V(\Vec{r}) &= \frac{Q}{4\pi\epsilon_o r} + 
+    \frac{1}{4\pi\epsilon_o r^3}\Vec{p}\cdot\Vec{r}\\
+    &= \frac{\sigma_oR^2}{\epsilon_o r}+
+    \frac{\sigma_oR^3}{3\epsilon_o r^2}\cos{\theta}\\
+\end{split}
+\nonumber
+\end{equation}
+\medbreak
+Con esto, el campo eléctrico en puntos alejados es
+
+\begin{equation}
+\begin{split}
+    \Vec{E}(\Vec{r}) &= -\nabla V(\Vec{r})\\
+    &= \left(\frac{\sigma_oR^2}{\epsilon_o r^2}+
+    \frac{2\sigma_oR^3}{3\epsilon_or^3}\cos{\theta}\right)\hat{r}+
+    \frac{\sigma_oR^3}{3\epsilon_or^3}\sin{\theta}\,
+    \hat{\theta}\\
+\end{split}
+\nonumber
+\end{equation}
+\medbreak
+$c)$ El potencial en el eje $z$ es
+\begin{equation}
+\begin{split}
+    V(z) &= \frac{\sigma_oR^2}{4\pi\epsilon_o}\int^\pi_0
+    \int^{2\pi}_0\frac{(1+\cos{\theta})\sin{\theta}}{\|\Vec{r}-z\hat{z}\|}\,d\phi d\theta\\
+    &= \frac{\sigma_oR^2}{4\pi\epsilon_o}\int^\pi_0
+    \int^{2\pi}_0\frac{(1+\cos{\theta})\sin{\theta}}{\sqrt{R^2+z^2-2Rz\cos{\theta}}}\,d\phi d\theta\\
+    &= \frac{\sigma_oR^2}{2\epsilon_o}\int^\pi_0
+    \frac{(1+\cos{\theta})\sin{\theta}}{\sqrt{R^2+z^2-2Rz\cos{\theta}}}\,d\theta\\
+    &= -\frac{\sigma_oR^2}{2\epsilon_o}\int^{-1}_1
+    \frac{1+\cos{\theta}}{\sqrt{R^2+z^2-2Rz\cos{\theta}}}
+    \,d\cos{\theta}\\
+    &=\frac{\sigma_oR^2}{2\epsilon_o}\left(
+    \frac{(R+z)^3}{3R^2z^2}-\frac{R^2+4Rz+z^2}{3R^2z^2}
+    |R-z|\right)
+\end{split}
+\nonumber
+\end{equation}
+\medbreak
+
+Si $R<z$, se tiene que
+
+\begin{equation}
+\begin{split}
+    V(z) &= \frac{\sigma_oR^2}{2\epsilon_o}\left(
+    \frac{(R+z)^3}{3R^2z^2}-\frac{R^2+4Rz+z^2}{3R^2z^2}
+    (z-R)\right)\\
+    &= \frac{\sigma_o}{6\epsilon_oz^2}(R^3+3R^2z+3Rz^2+z^3-
+    (z^3+3Rz^2-3R^2z-R^3))\\
+    &= \frac{\sigma_o}{6\epsilon_oz^2}(2R^3+6R^2z)\\
+    &= \frac{\sigma_oR^2}{\epsilon_oz}+
+    \frac{\sigma_oR^3}{3\epsilon_oz^2}\\
+\end{split}
+\nonumber
+\end{equation}
+\medbreak
+luego, el campo eléctrico en el eje $z$ con $R<z$ es
+
+\begin{equation}
+\begin{split}
+    \Vec{E}(\Vec{r}) &= -\nabla V(z)\\
+    &= \left(\frac{\sigma_oR^2}{\epsilon_o z^2}+
+    \frac{2\sigma_oR^3}{3\epsilon_oz^3}\right)\hat{z}\\
+\end{split}
+\nonumber
+\end{equation}
+\medbreak
+Estos resultados coinciden con los de $b)$ tomando $r=z$ y $\theta=0$
+\bigbreak
+
+\begin{solucion}{4}
+    % a
+    \ics a Las densidades de carga de polarización son
+
+\begin{itemize}
+    \item Superficial:
+    \[\sigma_p=\Vec{P}\cdot\hat{n}=k\rho\hat{\rho}\cdot\hat{\rho}'\]
+    
+    Donde el vector dirección $\hat{\rho}'$ depende de la superficie donde se está calculando la densidad de carga de polarización.\\
+    
+    En el caso de $\rho = a$, se tiene que $\hat{\rho}' = -\hat{\rho}$ y cuando $\rho = b$ se tiene $\hat{\rho}' = \hat{\rho}$. Así
+    
+    \begin{itemize}
+        \item[$\triangleright$] $\sigma_{p-a}
+                =\Vec{P}(\rho = a)\cdot\hat{n}
+                =ka\hat{\rho}\cdot-\hat{\rho}
+                =-ka$
+        
+        \item[$\triangleright$] $\sigma_{p-b}
+                =\Vec{P}(\rho = b)\cdot\hat{n}
+                =kb\hat{\rho}\cdot\hat{\rho}
+                =kb$
+        
+    \end{itemize}
+    
+    \item Volumétrica:
+    \[\rho_p=-\nabla\cdot\Vec{P}=-\frac{1}{\rho}\frac{\partial(k\rho^2)}{\partial\rho}= -2k\]
+\end{itemize}
+
+Con esto, la carga total de polarización es
+
+\begin{equation}
+\begin{split}
+    Q_p &= \int^{x+h}_x\int^{2\pi}_0k(b^2-a^2)\,d\phi dz+
+    \int^b_a\int^{x+h}_x\int^{2\pi}_0-2k\rho\,d\phi dz d\rho\\
+    &= 2\pi hk(b^2-a^2) - 2\pi hk(b^2-a^2)\\
+    &= 0\\
+\end{split}
+\nonumber
+\end{equation}
+
+%$b)$ 
+\ics b Para calcular el campo eléctrico y el desplazamiento eléctrico en todo el espacio, hay que dividirlo en tres sectores, $\rho <a$,   $a<\rho <b$ y    $b<\rho$. Para obtener los campos eléctricos se hará uso de la Ley de Gauss,
+
+    \begin{itemize}
+    
+    
+    \item ($\rho < a$) En este caso se tiene que la carga encerrada es 0, por lo que el campo eléctrico también será cero. Con esto, como $\Vec{D} = \epsilon_0\Vec{E} + \Vec{P}$ tenemos que $\Vec{D} = 0$, al no haber campo eléctrico ni polarización en esa zona (solo el material dieléctrico está polarizado).
+    
+    \item ($a < \rho < b$) Usando Ley de Gauss, y suponiendo que $h \gg \rho$, se tiene por simetría
+    
+    \begin{equation}
+\begin{split}
+    \int E(\rho)dS &= \frac{\sigma_{p-a}2\pi a h + \rho_p\pi h(\rho^2 - a^2)}{\epsilon_0}\\
+            E(\rho)\int dS &= \frac{-ka2\pi a h -2k\pi h(\rho^2 - a^2)}{\epsilon_0}\\
+            E(\rho)2\pi \rho h &= \frac{-2k\pi h\rho^2}{\epsilon_0}\\
+            E(\rho) &= \frac{-k\rho}{\epsilon_0} \implies \Vec E(\rho) = \frac{-k\rho}{\epsilon_0}\hat{\rho}\\
+\end{split}
+\nonumber
+\end{equation}
+    
+    Ahora podemos despejar el desplazamiento eléctrico,
+    
+    \begin{equation}
+        \begin{split}
+            \Vec{D} &= \epsilon_o\Vec{E} + \Vec{P}\\
+            &= -k\rho \hat\rho + k\rho\hat\rho\\
+            &= 0\\
+        \end{split}
+        \nonumber
+    \end{equation}
+    
+    \item ($b < \rho$) Igual que en caso $\rho < a$, la carga encerrada si se superpone un cilindro de radio $\rho$ será cero al no estar cargado el material dieléctrico. Por lo que $\Vec{E}(\rho) = 0$ y como $\Vec{P} = 0$ al estar fuera del material, $\Vec{D} = 0$.
+    
+    \end{itemize}
+    
+\ics c A partir de $\Vec{E}$ se tiene que, para $b<\rho$ el potencial es 0, para $a<\rho <b$
+
+\begin{equation}
+\begin{split}
+    V(\rho) &= -\int^{\rho'}_\infty\Vec{E}\cdot d\Vec{r}\\
+    &= \int^{\rho}_b\frac{k\rho'}{\epsilon_o}\,d\rho'\\
+    &= \frac{k\rho^2}{2\epsilon_o}-\frac{kb^2}{2\epsilon_o}\\
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+Por continuidad el potencial en $\rho <a$ es
+
+\[V = \frac{ka^2}{2\epsilon_o}-\frac{kb^2}{2\epsilon_o} \]
+
+%\begin{equation}
+%\begin{split}
+%    V(\Vec{r}_o) &= \frac{1}{4\pi\epsilon_o}\left(
+%    \int^{x+h}_h\int^{2\pi}_0
+%    \frac{kb}{\|\Vec{r}_o-\Vec{r}\|}\,d\phi dz\,-
+%    \int^{x+h}_h\int^{2\pi}_0
+%    \frac{ka}{\|\Vec{r}_o-\Vec{r}\|}\,d\phi dz\,+
+%    \int^b_a\int^{x+h}_x\int^{2\pi}_0
+%    \frac{2k\rho}{\|\Vec{r}_o-\Vec{r}\|}\,d\phi dz 
+%    d\rho\right)\\
+%    &= \frac{1}{4\pi\epsilon_o}\left(
+%    \int^{x+h}_h\int^{2\pi}_0
+%    \frac{kb}{\sqrt{(\rho_o-b)^2+(z_o-z)^2}}\,d\phi dz\,-
+%    \int^{x+h}_h\int^{2\pi}_0
+%    \frac{ka}{\sqrt{(\rho_o-a)^2+(z_o-z)^2}}\,d\phi dz\right)\\
+%    &\,\,\,\,\,\,+\frac{1}{4\pi\epsilon_o}\int^b_a\int^{x+h}_x\int^{2\pi}_0
+%    \frac{2k\rho}{\sqrt{(\rho_o-\rho)^2+(z_o-z)^2}}\,d\phi dz
+%    d\rho\\
+%    &= \frac{1}{2\epsilon_o}\left(
+%    \int^{x+h}_h
+%    \frac{kb}{\sqrt{(\rho_o-b)^2+(z_o-z)^2}}\, dz\,-
+%    \int^{x+h}_h
+%    \frac{ka}{\sqrt{(\rho_o-a)^2+(z_o-z)^2}}\, dz\right)\\
+%    &\,\,\,\,\,\,+\frac{1}{2\epsilon_o}\int^b_a\int^{x+h}_x
+%    \frac{2k\rho}{\sqrt{(\rho_o-\rho)^2+(z_o-z)^2}}\, dz 
+%    d\rho\\
+%    &= \frac{1}{2\epsilon_o}\left(\right)
+%\end{split}
+%\nonumber
+%\end{equation}
+
+\end{solucion}
+\bigbreak
+\bigbreak
+\begin{solucion}{5}
+\ics a Las densidades de carga de polarización son
+
+    \begin{itemize}
+        \item \textbf{Volumétrica:}
+        \[\rho_p = -\nabla\cdot\Vec{P}=0\]
+        \item \textbf{Superficial:}
+        \[\sigma_{p1} = P_0\hat{z}\cdot\hat{z}=P_0\]
+        \[\sigma_{p2} = P_0\hat{z}\cdot(-\hat{z})=-P_0\]
+    \end{itemize}
+
+Con esto las placas tienen cargas de polarización $P_0$ y $-P_0$ formando un condensador de capacitancia (\ref{C:placas})
+
+\[C = \frac{S\epsilon_o}{a}\]
+
+finalmente
+
+\[\Delta V=\frac{Q}{C}=\frac{aP_0}{\epsilon_o}\]
+
+\ics b
+Se tiene que la carga inducida en las placas viene dada por la carga dipolar del material dieléctrico, al no ser esta carga libre, se tiene que se mantendrá con los mismos valores que en el inciso \textit{a)}. Siendo sus valores $\sigma_{p1}S$ y $\sigma_{p2}S$ para las placas respectivas. 
+
+% Pensandolo llegué a la conclusión que podría ser la misma que antes, ya que las cargas no están libres, entonces no podrían trasladarse para ajustarse frente a estar conectadas. 
+    % APARTE: esto significaria que podrian existir condensadores/capacitores que poseerían carga a pesar de estar sus placas conectadas, investigare para ver si eso es siquiera posible. ACTUALIZACION: Parece que si es posible, y habría una carga libre y una carga superficial inducida
+    % Pagina con info: http://agora.ucv.cl/docs/592/libro2/index19.htm
+    
+\ics c 
+Al hacer un cambio de $\Vec{P} = P_0\hat{z}$ a $\Vec{P} = P_0\hat{z} + \epsilon_0 \mathcal{X}_e\Vec{E}$ se tendrá que variarán las densidades de polarización y cambiará la diferencia de potencial entre las placas.\\
+
+ Los nuevos valores serán
+
+    \begin{itemize}
+        \item \textbf{Volumétrica:}
+        \[\rho_p = -\nabla\cdot\Vec{P}= -\epsilon_0\mathcal{X}_e\nabla\cdot\Vec{E}=
+        -\epsilon_0\mathcal{X}_e\frac{1}{\epsilon_0}\nabla\cdot\left(\Vec{D}-\Vec{P}_0\right)=0\]
+    \end{itemize}
+
+Si $a$ es mucho menor a las dimensiones de las placas (misma hipótesis usada en la parte $a)$), dado que sólo hay carga superficial, el campo eléctrico se puede escribir como $\Vec{E}(\Vec{r}) = E(z)\hat{z}$ (\ref{SimetríaPlanosInf})
+
+    \begin{itemize}
+        \item \textbf{Superficial:}
+        \[\sigma_{p1} = P_0\hat{z}\cdot\hat{z} + \epsilon_0\mathcal{X}_e\Vec{E}\cdot\hat{z} =P_0 + \epsilon_0\mathcal{X}_eE(0)\]
+        \[\sigma_{p2} = P_0\hat{z}\cdot(-\hat{z})+ \epsilon_0\mathcal{X}_e\Vec{E}\cdot(-\hat{z}) = -P_0  -\epsilon_0\mathcal{X}_eE(a)\]
+    \end{itemize}
+
+Dado que
+
+\[Q_p = \int\sigma_{p1}\,dS+\int\sigma_{p2}\,dS=\epsilon_o
+\mathcal{X}_e(E(0)-E(a))\int\,dS=0\]
+\bigbreak
+al no estar el dieléctrico cargado, se verifica que $E(0)=E(a)$, con lo cual ambas placas tienen cargas de igual magnitud y signo opuesto. De la misma forma que en $a)$ la diferencia de potencial pasará a ser 
+
+\[\Delta V=\frac{Q}{C}=\frac{a(P_0 + \epsilon_0\mathcal{X}_eE(0))}{\epsilon_o}\]
+
+\end{solucion}
+
+\begin{solucion}{6}
+    
+    Tenemos que $\Vec{P} = P_0\hat{r}$ para $r > R$, y que $\Vec{P} = 0$ para $r < R$, con esto\\
+    
+    Para $r > R$
+    \begin{equation}
+            \rho_p = -\nabla\cdot\Vec{P}\\
+            = -\frac{1}{r^2}\frac{\partial}{\partial r}(P_0r^2)\\
+            = -\frac{2P_0}{r}
+        \nonumber
+    \end{equation}
+    
+    Para calcular la densidad superficial de carga polarizada usamos que $\hat{n} = -\hat{r}$, así
+    \begin{equation}
+            \sigma_p = \Vec{P}\cdot(-\hat{r}) = -P_0
+        \nonumber
+    \end{equation}
+    
+    Con ambos valores despejados se puede calcular el campo eléctrico en todo el espacio haciendo uso de la Ley de Gauss en coordenadas esféricas, superponiendo una superficie Gaussiana esférica de radio r y usando argumentos de simetría\\
+    
+    Si $r < R$, se tendrá que la carga encerrada es cero, por lo que el campo eléctrico también será cero.\\
+    
+    Si $r > r$, se tendrá
+    
+    \begin{equation}
+        \begin{split}
+            &\int E(r)dS = \frac{\sigma_p4\pi R^2 + \rho_p \frac{4\pi}{3}(r^3 - R^3}{\epsilon_0}\\
+            \implies &E(r) 4\pi r^2= \frac{-P_0\pi R^2 -\frac{2P_0}{r} \frac{4\pi}{3}(r^3 - R^3}{\epsilon_0}\\
+            \implies &\Vec E(r) = \left[ -\frac{P_0}{\epsilon_0}\frac{R^2}{r^2} - \frac{2P_0}{3\epsilon_0}\left( 1-\frac{R^3}{r^3} \right)\right]\hat{r}
+        \end{split}
+        \nonumber
+    \end{equation}
+    
+\end{solucion}
+
+\bigbreak
+
+\newpage
