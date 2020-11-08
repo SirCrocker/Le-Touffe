@@ -1,8 +1,8 @@
 ## Bienvenide!
 
-En esta página está la recolección de los resumenes y apuntes hechos por nosotros para los cursos que cursamos. 
+En esta página está la recolección de los resumenes y apuntes hechos por nosotros para los ramos que cursamos. 
 
-Está disponible tanto la descarga directa PDF (Versión GitHub), como la dirección a Overleaf que siempre tendrá la última versión
+Está disponible tanto la descarga directa PDF (Versión GitHub), como la dirección a Overleaf que siempre tendrá la última versión.
 
 
 ### Apunte Cálculo
