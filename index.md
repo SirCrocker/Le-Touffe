@@ -51,4 +51,4 @@ Incluye:
 - Teoría _(Ahora con imágenes!)_
 - Justificación de fórmulas/conceptos
 
-###### * La versión GitHub es probable que este desactualizada
+###### * La versión GitHub es probable que esté desactualizada
