@@ -25,7 +25,7 @@ Incluye:
 - Resultado útiles 
 - Sistema de Coordenadas
 - Tabla de Primitivas
-- Teoría hasta materiales dieléctricos
+- Teoría hasta corriente eléctrica
 - Ejercicios con solución para todos los temas
 
 ### Apunte Economía
@@ -39,12 +39,14 @@ Incluye:
 - Glosario de términos
 - 1 Ejemplo
 
-### Resumen termodinámica
+### Apunte termodinámica
 
 [Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Termodinamica.pdf) | 
 [Dirección Overleaf](https://www.overleaf.com/read/fjkwbxggwtvs)
 
 Incluye:
-- Términos varios
+- Materia suficiente para C2
 - Notación
-- Ecuaciones
+- Fórmulas
+- Teoría _(Ahora con imágenes!)_
+- Justificación de fórmulas/conceptos
