@@ -1,0 +1,108 @@
+\section{Justificaciones y Demostraciones}
+
+\subsection{Definición estadística de la temperatura}
+\label{DTemperatura}
+Si se consideran dos sistemas aislados que admiten el traspaso de energía con microestados $\Omega_1 = \Omega(E_1, N_1, V_1)$ y $\Omega_2 = \Omega(E_2, N_2, V_2)$, el sistema formado por ambos tiene $\Omega_1\Omega_2$ microestados y energía interna $E = E_1+E_2$ constante. Con el tiempo suficiente se llegará al equilibrio térmico, en donde se maximiza $\Omega_1\Omega_2$
+
+\[\frac{d}{dE_1}(\Omega_1\Omega_2)=
+\Omega_2\frac{d\Omega_1}{dE_1} + 
+\Omega_1\frac{d\Omega_2}{dE_2}\frac{dE_2}{dE_1}=0\]
+
+como $E$ es constante
+
+\[\frac{dE}{dE_1}=1+\frac{dE_2}{dE_1}=0
+\Rightarrow \frac{dE_2}{dE_1}=-1\]
+
+\begin{equation}
+\begin{split}
+    \frac{1}{\Omega_1}\frac{d\Omega_1}{dE_1}-
+    \frac{1}{\Omega_2}\frac{d\Omega_2}{dE_2}=0
+    & \Rightarrow \frac{d\ln{(\Omega_1)}}{dE_1} =
+    \frac{d\ln{(\Omega_2)}}{dE_2}\\
+    & \Rightarrow \frac{dS(E_1,N_1,V_1)}{dE_1} =
+    \frac{dS(E_2,N_2,V_2)}{dE_2}\\
+\end{split}
+\nonumber
+\end{equation}
+
+A esta condición se le dice \enquote{estar a igual temperatura} y se usa para definir la temperatura por la ecuación
+
+\[\frac{1}{T}=\frac{dS}{dE}\]
+
+\subsection{Capacidad Calorífica en equilibrio}
+\label{Cequilibrio}
+
+Por primera ley se tiene que
+
+\[\di Q = dE - \di W\]
+
+y en equilibrio térmico $\di W = -pdV$, considerando que la energía interna es función de la temperatura y el volumen, $E(T,V)$, se tiene que
+
+\begin{equation}
+\begin{split}
+    C &= \frac{dQ}{dT}\\
+    &= \frac{dE}{dT}+p\frac{dV}{dT}\\
+    &= \devtermo{V}{E}{T}+\devtermo{T}{E}{V}\frac{dV}{dT}+
+    p\frac{dV}{dT}\\
+    &=\devtermo{V}{E}{T}+\lados{[}{\devtermo{T}{E}{V}+p}\frac{dV}{dT}\\
+\end{split}
+\nonumber
+\end{equation}
+Si se mantiene $p$ constante, se obtiene
+\[C_p = \devtermo{V}{E}{T}+\lados{[}{\devtermo{T}{E}{V}+p}\devtermo{p}{V}{T}\]
+
+
+\subsection{Cambio nulo de temperatura}
+\label{DT=0}
+Si las temperaturas inicial y final de un proceso son iguales ($\Delta T = 0$), se tiene que
+
+\begin{equation}
+\begin{split}
+    \Delta T = 0 &\Rightarrow \Delta E = 0\\
+    &\Rightarrow W=-Q\\
+    &\Rightarrow \Delta S = \Sigma - \frac{W}{T}\\
+    &\Rightarrow T(\Sigma-\Delta S)\\
+\end{split}
+\nonumber
+\end{equation}
+
+Dado que $\Sigma \geq 0$, se cumple también que $W\geq -T\Delta S$.
+
+\subsection{Trabajo y calor en ciclos}
+\label{TQciclos}
+\textbf{1 baño:}
+
+\begin{equation}
+\begin{split}
+    &\Delta E = Q + W = 0 \Rightarrow Q = -W\\
+    &W = \Delta E - T(\Delta S-\Sigma) = T\Sigma\\
+\end{split}
+\nonumber
+\end{equation}
+
+\textbf{2 baños:}
+
+\begin{equation}
+\begin{split}
+    &\Delta E = Q_1 + Q_2 + W \Rightarrow W = -Q_1-Q_2\\
+    &\Delta S = \Sigma+\frac{Q_1}{T_1}+\frac{Q_2}{T_2}
+    \Rightarrow Q_1 = -\lados{(}{\frac{T_1}{T_2}Q_2+T_1\Sigma}\\
+\end{split}
+\nonumber
+\end{equation}
+
+\subsection{Trabajo de un motor de Carnot}
+\label{TCarnot}
+La magnitud del trabajo de un ciclo de Carnot es igual al área encerrada por la curva que describe en el plano $TS$ y su signo esta dado según la orientación en que se recorre el ciclo.
+
+\begin{equation}
+\begin{split}
+    0<(T_2-T_1)(S_2-S_1) &= (T_2-T_1)\frac{Q_2}{T_2}\\
+    &=Q_2-\frac{T_1}{T_2}Q_2\\
+    &=Q_2+Q_1\\
+    &=-W\\
+\end{split}
+\nonumber
+\end{equation}
+
+\newpage

@@ -1,0 +1,147 @@
+\textbf{Pared diatérmica}: permite el flujo del calor.
+
+
+\textbf{Pared adiabática}: \underline{no} permite el flujo del calor.
+\\
+
+\textbf{Baño térmico}: es un sistema 'muy grande' que posee $C_V$ que tiende a infinito, es decir, frente a un cambio de energía su temperatura no cambia.
+\\
+
+\textbf{Variables extensivas}: aumentan con el tamaño del sistema (e.g. \textit{N, V, S, E, C, S}) si mantenemos $\frac{N}{V}$ fijo. \textit{\enquote{Cantidad de materia}}
+\\
+
+\textbf{Variables intensivas}: independientes del tamaño del sistema (e.g. \textit{T, p}) cuando $\frac{N}{V}$ está fijo. \textit{\enquote{Son intrínsecas}}
+\\
+
+\textbf{Proceso}: Cuando un sistema cambia de un estado de equilibrio termodinámico a otro, decimos que ocurrió un proceso.
+\[(ETD)_1 \xrightarrow[]{\text{proceso}} (ETD)_2 \]
+
+\insertequationcaptioned[\label{eq:gas-ideal}]{\boxed{pV = Nk_BT}}{\textbf{Ecuación gas ideal}}
+
+\insertequationcaptioned[\label{eq:energia-gas}]{\boxed{E = \frac{Nk_BT}{\gamma - 1}}}{\textbf{Energía de un gas ideal poliatómico} \newline (para un gas monoátomico $\gamma = \frac{5}{3}$)}
+
+\insertequationcaptioned[\label{eq:formula-stirling}]{\boxed{\ln n! \approx n\ln n - n}}{\textbf{Fórmula de Stirling} (n $\gg$ 1)}
+
+La capacidad calórica es cuanta energía es necesario darle al sistema para que aumente en un grado Kelvin su temperatura.
+
+\insertequationcaptioned[\label{eq:capacidad-calorica}]{\boxed{C = \frac{dE}{dT} = \frac{dQ}{dT}}}{\textbf{Capacidad calórica}}
+
+\textbf{Funciones (ecuaciones) de estado}: es cualquier cantidad física que tiene un valor definido para cada estado de equilibrio del sistema y se puede expresar como una función de las demás variables de estado. Se caracterizan por tener diferenciales exactos. \textit{\enquote{No depende de como se 'llegó allí'}} \quad (e.g. \textit{V, p, T, E})
+\\
+
+\textbf{Equilibrio para un sistema}: cuando sus variables de estado (\textit{S, E, N, V, p, T, ...}) se relacionan por las ecuaciones de estado.
+
+
+Dos fronteras están en equilibrio entre sí, si $T_1 = T_2$ cuando la pared es diatérmica, o si $p_1 = p_2$ cuando la pared es móvil.
+\\
+
+\textbf{Proceso cuasi-estático (PCE)}: Si un sistema de interés va cambiando durante un proceso, de manera que a todo instante sus variables de estado están definidas (un único valor para el sistema), y se relacionan entre sí estas variables por las ecuaciones de estado, entonces decimos que el proceso es cuasi-estático. 
+\\
+\newpage
+%En el caso de un gas ideal, la capacidad calórica se puede medir de dos maneras distintas. Manteniendo el volumen (V) constante, o manteniendo la presión (p) constante, así sus correspondientes valores son:
+
+%\insertequationcaptioned[\label{eq:capacidad-gas-ideal}]{C_V = \left( \frac{\partial E}{\partial V} \right)_V}{}
+
+\textbf{Ley cero de la termodinámica}: dos sistemas, cada uno por separado en equilibrio con un tercero, están en equilibrio entre sí.
+
+\textit{\enquote{Si un cuerpo 'A' está en equilibrio con uno 'B', y 'B' está en equilibrio con 'C', entonces 'A' está en equilibrio con 'C'.}}
+\\
+
+\textbf{Primera ley de la termodinámica}: en un sistema aislado la energía es constante (o se conserva).
+
+\insertequation[\label{eq:primera-ley}]{\Delta E = W + Q}
+
+\textbf{$\Delta$E} es el cambio de energía interna del sistema, \textbf{W} el trabajo realizado sobre el sistema durante el proceso y \textbf{Q} el calor que fluye al sistema durante el proceso. Por convención si el calor va del medio al sistema es positivo, y negativo si es al revés. De manera similar, si se hace trabajo en el sistema este es positivo, y de manera inversa es negativo.
+\\
+
+La ecuación \ref{eq:primera-ley} también se puede escribir de la forma $dE = \dj W + \dj Q$, donde $\dj$ representa una cantidad pequeña, infinitesimal o elemental de un proceso, ¡no una función!. No se puede hacer uso de la notación \textit{dW} ni \textit{dQ} debido a que \textit{W} y \textit{Q} \textbf{no} son funciones de estado.
+\\
+
+%Al comprimir y expandir gases ideales se cumple la relación \[W = -\int_{V_i}^{V_f} p\,dv\]
+%\\
+\textit{La $1^{era}$ ley implica que la única forma en que se puede comprimir un gas ideal con $T_i = T_f$, es que esté en contacto con un baño térmico, y por lo tanto $Q \ne 0$}.
+\\[1.4em]
+
+\hspace{1px}
+\\
+
+\textbf{Microestado}: conjunto de variables necesarias para describir un sistema a nivel microscópico.
+
+\textbf{Macroestado}: conjunto de variables necesarias para describir un sistema a nivel macroscópico.
+
+\textit{\enquote{Un macroestado puede tener múltiples microestados compatibles.}}
+\\
+
+Se define $\Omega (E, N, V)$ como el número de microestados compatibles con un macroestado que tiene energía \textit{E}, \textit{N} partículas y volumen \textit{V}.
+\\
+
+\begin{equation}
+    \label{eq:Sackur-Tetrode}
+    \begin{split}
+     & \boxed{\Omega (E, N, V)_{gas-ideal} \approx e^{N \left[\frac{5}{2} + \ln{\frac{V}{N} \left( \frac{4 \pi E}{3h^2N} \right)^{3/2} } \right]}} \\
+     & \textbf{Ecuación Sackur-Tetrode} \hspace{2px} (\textit{h} \hspace{3px} cte.\hspace{3px} de\hspace{3px} Planck)
+    \end{split}
+\end{equation}
+\hspace{1px}
+
+
+\insertequationcaptioned[\label{eq:entropia-boltzmann}]{\boxed{S(E, N, V) = k_B\ln{\Omega (E, N, V)}}}{\textbf{Entropía de Boltzmann}}
+
+\textbf{Segunda ley de la termodinámica}: la entropía de un sistema aislado puede aumentar (\underline{no disminuir}) cuando el sistema va de un estado de equilibrio (ETD) a otro. \textit{\enquote{En un sistema aislado, la entropía nunca decrece}}
+\\
+
+También puede establecerse la segunda ley de las siguientes formas (siempre en un sistema aislado):
+\begin{itemize}
+    \item \textit{La entropía se puede crear, pero no se puede aniquilar}
+    \item \textit{En un sistema aislado el estado de equilibrio es el de entropía máxima}
+    \item \textit{Si se libera una restricción para las variables de estado, estas evolucionarán al valor que maximice la entropía de Boltzmann.}
+\end{itemize}
+
+Para un baño térmico se tiene que $\Delta S_B = \frac{-Q}{T_B}$
+\\
+
+
+
+%Definiciones de \textit{p} y \textit{T} haciendo uso de la entropía.
+
+\insertequationcaptioned[\label{eq:temperatura}]{\boxed{\frac{1}{T} \equiv (\frac{\partial S}{\partial E})_{N,V} \iff (\frac{\partial E}{\partial S})_{N,V} = T(S, N, V)}}{\textbf{Definición de temperatura absoluta.}}
+
+* Se puede hacer la igualdad en (\ref{eq:temperatura}) debido a que cumple las condiciones de la derivada inversa. (ver apunte VF)
+\\
+
+Esta definición de temperatura nos lleva a la idea de que $\frac{dE}{T(E,N,V)} = dS$, que es integrable a ambos lados, dando:
+\[\int_{E_1}^{E_2} \frac{dE}{T(E,N,V)} = S(E_2,N,V) - S(E_1,N,V)\]
+
+Que tiene como condiciones que \textit{N} y \textit{V} sean fijos, y $T(E,N,V)$ este definido para todas las variables $E_1 < E < E_2$.
+\newline
+
+\insertequationcaptioned[\label{eq:presion}]{\boxed{(\frac{\partial E}{\partial V})_{S,N} = -p}}{\textbf{Relación Energía-presión}}
+
+Con esto, y haciendo uso de la serie de Taylor se obtiene que para todo proceso en un sistema aislado, ya se reversible o irreversible:
+
+\insertequation[\label{eq:primera-ley-general}]{\boxed{dE = TdS - pdV}}
+
+
+\begin{equation}
+    \label{otros:resumen}
+    \begin{split}
+        & \text{\textbf{Resumen} \textit{(sistemas cerrados)}}\\
+        & dE = \dj Q + \dj W \quad \hspace{8px} \text{siempre cierto} \\
+        & \dj Q = TdS \quad \quad \quad \quad \text{solo es cierto para procesos reversibles (PCE)} \\
+        & \dj W = -pdV \quad \quad \quad \text{solo es cierto para procesos reversibles (PCE)} \\
+        & dE = TdS -pdV \quad \text{siempre cierto} \\
+        & \text{Para procesos irreversibles: \hspace{3px} $\dj Q \leq TdS, \quad \dj{W} \geq -pdV$}
+    \end{split}
+\end{equation}
+
+De aquí se obtiene que en procesos reversibles se cumplen las relaciones \[W = -\int_{V_i}^{V_f} p(V)\,dV \quad \text{y} \quad Q = T\Delta S\]
+\\
+
+\begin{center}
+--------------------- Control 2 ---------------------
+\end{center}
+
+En un proceso cualquiera si tenemos que los estados iniciales y finales son los mismos, entonces $E_i = E_f \implies W = -Q$ y se cumple que:
+\[\boxed{W \geq -T\Delta S}\]
+
+\textit{La segunda ley impone un límite al trabajo mínimo que hay que hacer para comprimir un gas ideal. Al igual que a la cantidad máxima de energía extraíble al expandir uno.}

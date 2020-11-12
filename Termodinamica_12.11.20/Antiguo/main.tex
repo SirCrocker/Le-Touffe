@@ -1,0 +1,77 @@
+% Template:     Template Reporte LaTeX
+% Documento:    Archivo principal
+% Versión:      2.0.4 (26/09/2020)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R.
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo@ppizarror.com
+%
+% Sitio web:    [https://latex.ppizarror.com/reporte]
+% Licencia MIT: [https://opensource.org/licenses/MIT]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[letterpaper,oneside]{article}
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\titulodelreporte {Termodinámica (Física)}
+\def\temaatratar {Tema a tratar}
+\def\fechadelreporte {\today}
+
+\def\autordeldocumento {\textit{Le Touffe}}
+\def\nombredelcurso {Curso}
+\def\codigodelcurso {FI-2004}
+
+\def\nombreuniversidad {Universidad de Chile}
+\def\nombrefacultad {Facultad de Ciencias Físicas y Matemáticas}
+\def\departamentouniversidad {Departamento de la Universidad}
+\def\imagendepartamento {departamentos/uchile}
+\def\localizacionuniversidad {Santiago, Chile}
+
+% IMPORTACIÓN DEL TEMPLATE
+\input{Antiguo/template}
+
+
+% INICIO DE PÁGINAS
+\begin{document}
+	
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\templatePagecfg
+
+% CONFIGURACIONES FINALES
+\templateFinalcfg
+
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+% Título y nombre del autor
+\inserttitle
+
+% Resumen o Abstract
+\begin{abstract}
+	En este charquicán de resumen se hará uso de la siguiente notación:
+	\begin{itemize}
+	    \item $k_B$: constante de Boltzmann
+	    \item \textit{N}: cantidad de moléculas en un sistema a estudiar
+	    \item \textit{p}: presión
+	    \item \textit{V}: volumen
+	    \item \textit{E}: energía interna de un sistema
+	    \item \textit{S}: entropía
+	    \item \textit{T}: temperatura (medida en Kelvin)
+	    \item \textit{C}: capacidad calórica
+	    \item $C_V$: capacidad calórica a volumen constante
+	    \item $C_p$: capacidad calórica a presión constante
+	    \item \textit{c}: calor específico
+	    \item \textit{Q}: calor
+	    \item \textit{W}: trabajo
+	\end{itemize}
+	Además de la mencionada en 'Notación' en el apunte de Víctor Fuenzalida (VF) [versión 29/08/2020]
+	\\
+\end{abstract}
+
+\input{Antiguo/principal}
+\pagebreak
+
+% FIN DEL DOCUMENTO
+\end{document}

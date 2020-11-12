@@ -1,0 +1,281 @@
+\section{Fórmulas y Ecuaciones}
+\textbf{Importante:} Las identidades dependen de las variables que definen a la función, estas son las mostradas como subíndices en la derivada parcial y con respecto a la que se deriva. 
+\subsection{Ecuación de los Gases Ideales}
+
+\[pV=Nk_BT\]
+\bigbreak
+\begin{itemize}
+    \item Es válida en el equilibrio
+    \item Con $n$ el número de moles y $R$ la constante de los gases, se puede expresar como
+    \[pV=nRT\]
+\end{itemize}
+
+\subsection{Capacidad Calorífica o térmica}
+
+\[C=\frac{\di Q}{dT}\]
+
+\txtsi{\textbf{En equilibrio se tiene que:}}{(\ref{Cequilibrio})}
+% Aparece en el Blundell, p.108 | Mala mía
+\[C=\frac{\partial E}{\partial T}+\left(
+\frac{\partial E}{\partial V}+p\right)\frac{dV}{dT}\]
+
+\begin{itemize}
+    \item Volumen constante:
+    \[C_V=\mcte{V}{\frac{\di Q}{d T}}=\devtermo{V}{E}{T} = T\devtermo{V}{S}{T}\]
+    \item Presión constante: % Apunte VF página 105, por eso lo cambié
+    \[C_p = \mcte{p}{\frac{\di Q}{d T}}=\devtermo{p}{E}{T}+p\mcte{p}{\parfrac{V}{T}} = \devtermo{p}{H}{T} = T\devtermo{p}{S}{T}\]
+    \item Relación entre ambas constantes:
+    \[C_p = C_V + T\devtermo{V}{p}{T}\cdot \devtermo{p}{V}{T}\]
+    \item Para un gas ideal:
+    \[C_p = C_V + NK_B \quad\] Con $NK_B = R$ si es que $N = N_A$ (número de Avogrado)
+\end{itemize}
+
+% + \left(
+% \frac{\partial E}{\partial V}+p\right)\left(
+% \frac{\partial V}{\partial T}\right)=C_V+R\]
+
+\subsection{Índice Adiabático}
+
+\[\gamma = \frac{C_p}{C_V} = \frac{C_V+R}{C_V}\]
+\bigbreak
+\textbf{Gas ideal monoatómico:}
+
+\[\gamma = \frac{5}{3}\]
+\bigbreak
+\textbf{Gas ideal diatómico:}
+
+\begin{itemize}
+    \item Traslacional y rotacional
+    \[\gamma = \frac{7}{5}\]
+    \item Traslacional, rotacional y vibracional
+    \[\gamma = \frac{9}{7}\]
+\end{itemize}
+
+\textbf{Relación para gases ideales en proceso adiabático}: para todo $p$, $V$ y $T$ en un proceso adiabático
+
+\[TV^{\gamma -1} = \text{cte}_1 \quad \land \quad pV^\gamma = \text{cte}_2\]
+
+\subsection{Energía Interna}
+$\,$\\
+
+\txtsi{\textbf{Primera Ley:}}{(\ref{1ley})}
+
+
+\[\Delta E = W+Q\]
+\[dE = \di W+ \di Q\]
+
+\begin{itemize}
+    \item Si el sistema está en equilibrio
+    \[dE = -pdV + TdS\]
+    \item Si la temperatura final es igual a la inicial $\Delta E=0$
+\end{itemize}
+
+\bigbreak
+
+\textbf{Función del volumen y la entropía}: Si $E=E(V,S)$
+
+\begin{equation}
+\begin{split}
+    T&=\mcte{V}{\parfrac{E}{S}}\\
+    p&=-\mcte{S}{\parfrac{E}{V}}\\
+\end{split}
+\nonumber
+\end{equation}
+
+\bigbreak
+
+\textbf{Sistemas cerrados:} Si $N$ es constante y $S$ depende de la temperatura y el volumen, se tiene
+
+\[dE = C_VdT - \lados{[}{p-T\devtermo{V}{p}{T}}dV\]
+
+\textbf{Gas Ideal:}
+
+\[E=\frac{Nk_BT}{\gamma-1}\]
+
+
+\subsection{Entropía}
+\textit{El cambio de entropía no depende del camino seguido, es decir solo depende de los estados inicial y final.}\\
+
+\textbf{Entropía de Boltzmann:}
+
+\[S = k_B\ln{\Omega}\]
+\bigbreak
+
+\txtsi{\textbf{Relación entre entropía y temperatura:}}{(\ref{DTemperatura})} En equilibrio se tiene que
+
+\[\left( \frac{\partial S}{\partial E} \right)_{V} \equiv \frac{1}{T} \quad \land \quad T = \devtermo{N,V}{E}{S}\]
+
+\[dS = \frac{1}{T} \di Q\]
+
+\[\Delta S = \int \frac{1}{T}\,\di Q = \int\frac{1}{T}\,dE+
+\int\frac{p}{T}\,dV\]
+
+\bigbreak
+
+\textbf{Entropía con un Baño Térmico:}
+
+\[\Delta S_B=-\frac{Q}{T}\]
+\[\Sigma = \Delta S+\Delta S_B=\Delta S-\frac{Q}{T}\]
+\[\Sigma \geq 0 \text{ }^{(\ref{2ley})}\]
+\bigbreak
+\textbf{En sistemas cerrados:} Si $dN = 0$ y $S = S(E, V)$ entonces
+
+\[\mcte{E}{\frac{\partial S}{\partial V}} = 
+\frac{-1}{T}\mcte{S}{\frac{\partial E}{\partial V}}=\frac{p}{T}\]
+
+\[\devtermo{V}{S}{T}=\frac{C_V}{T}\]
+
+\[dS = \frac{C_V}{T}+\devtermo{V}{p}{T}dV\]
+
+\bigbreak
+
+\textbf{Ecuación de Sackur-Tetrode:} Para un gas ideal monoatómico se cumple \txtsi{que}{(\ref{eq:e(s,v,n)})}
+
+\[S=k_BN\ln{\left(\frac{V}{N}\left(\frac{4\pi m}{3h^2}
+\frac{E}{N}\right)^{(3/2)}\right)}+\frac{5}{2}\]
+\bigbreak
+Donde $m$ es la masa de una partícula de gas y $h$ la constante de Planck.
+
+\[\Delta S = Nk_B\ln{\left(\frac{V_f}{V_i}\left(
+\frac{E_f}{E_i}\right)^{(3/2)}\right)}=Nk_B\ln{\left( \frac{V_f}{V_i}\left(\frac{T_f}{T_i}\right)^{(3/2)}\right)}\]
+
+\subsection{Procesos Reversibles}
+
+Los índices $d$ y $r$ refieren a los dos sentidos en los que se puede realizar el proceso.
+
+\begin{equation}
+\begin{split}
+    &\Sigma = 0\\
+    &\Delta E_r = -\Delta E_d\\
+    &\Delta S_r = \frac{Q_r}{T}=-\frac{Q_d}{T}=\Delta S_d\\
+    &Q_d+Q_r=0\\
+    &W_r+W_d=0\\
+\end{split}
+\nonumber
+\end{equation}
+
+En los procesos irreversibles se tiene que
+
+\[Q_d+Q_r=-T\left(\Sigma_d+\Sigma_r\right)<0\]
+
+\subsection{Ciclos}
+
+\[\Delta E = 0\]
+\[\Delta S = 0\]
+\bigbreak
+\txtsi{\textbf{1 baño térmico:}}{\ref{TQciclos}}
+\[W=T\Sigma\geq 0\]
+\bigbreak
+
+\txtsi{\textbf{2 baños térmicos:}}{\ref{TQciclos}}
+\begin{equation}
+\begin{split}
+    &\Sigma = -\left(\frac{Q_1}{T_1}+\frac{Q_2}{T_2}\right)\\
+    &W=-(Q_1+Q_2)\\
+    &Q_1 = -Q_2\frac{T_1}{T_2}-\Sigma T_1\\
+    &W = -Q_2\left(\frac{T_1}{T_2}-1\right)+T_1\Sigma\\
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+
+\textbf{Motor:}
+\begin{equation}
+\begin{split}
+    &W<0 \quad \text{(Se extrae trabajo del sistema)}\\
+    &Q_1 <0 \quad \text{(El baño frío recibe energía)}\\
+    &Q_2>0 \quad \text{(El baño caliente entrega energía)}\\
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+
+\textbf{Rendimiento de un motor:}
+\begin{equation}
+\begin{split}
+    &\eta = -\frac{W}{Q_2}= 1+\frac{Q_1}{Q_2}  \text{ }^{(\ref{plbr-motor})}\\
+    &0\leq\eta\leq 1\\
+    &\eta_c=1-\frac{T_1}{T_2}\\
+    &\eta=\eta_c-\Sigma\frac{T_1}{Q_2}\\
+    &\eta < \eta_c \text{ }^{(\ref{2ley-motor})}\\% Según C2 2017-2 P2 [Barra], el rendimiento de Carnot es inalcanzable
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+
+\textbf{Refrigerador (``motor inverso'' o Bomba térmica):}
+\begin{equation}
+\begin{split}
+    &W>0 \quad \text{(Se hace trabajo sobre el sistema)}\\
+    &Q_1 >0 \quad \text{(El baño frío entrega energía)}\\
+    &Q_2<0 \quad \text{(El baño caliente recibe energía)}\\
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+
+%En caso de refrigerados se denomina eficiencia
+\textbf{Eficiencia de un refrigerador:} \txtsi{ }{(\ref{refri-q2-w})}
+\begin{equation}
+\begin{split}
+    &\eta^R = \frac{Q_1}{W} = \lados{)}{\frac{T_2}{T_1} - 1 + \frac{T_2}{T_1}\Sigma}^{-1}\\
+    &\eta^R_c=-\frac{Q_1}{Q_1+Q_2}=-\frac{1}{1+Q_2/Q_1}
+    =\frac{1}{T_2/T_1-1}\\
+    &\eta^R\leq\eta^R_c \quad \land \quad 0 < \eta^R_c < \infty\\
+\end{split}
+\nonumber
+\end{equation}
+
+\subsection{Trabajo y Calor}
+
+\textbf{Diferenciales:} En procesos cuasi-estáticos se cumple que
+
+\begin{equation}
+\begin{split}
+    &\di W = -pdV\\
+    &\di Q = TdS\\
+\end{split}
+\nonumber
+\end{equation}
+
+\txtsi{\textbf{Temperatura final igual a inicial:}}{\ref{DT=0}}
+
+\begin{equation}
+\begin{split}
+    \Delta T = 0 &\Rightarrow W = T(\Sigma-\Delta S)\\
+    &\Rightarrow W\geq-T\Delta S\\
+\end{split}
+\nonumber
+\end{equation}
+
+\subsection{Potenciales termodinámicos y variables naturales}
+\textit{Las relaciones de Maxwell correspondientes están en teoría}\txtsi{ }{(\ref{relaciones-maxwell})}
+
+
+\begin{minipage}{0.5\textwidth}
+    \begin{equation}
+        \begin{split}
+            E &= E(S,V)^{(\ref{eq:e(s,v,n)})}\\
+            F &= F(T,V) = E - TS\\
+            H &= H(S,p) = E + pV\\
+            % G = G(p,T) = E - TS + pV
+        \end{split}
+        \nonumber
+    \end{equation}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \begin{equation}
+        \begin{split}
+            dE &= TdS - pdV\\
+            dF &= -pdV - SdT\\
+            dH &= TdS + Vdp\\
+            % dG &= Vdp - SdT
+        \end{split}
+        \nonumber
+    \end{equation}
+    \end{minipage}%
+    
+    \nonumber
+
+
+\newpage
