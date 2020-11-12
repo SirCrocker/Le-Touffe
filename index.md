@@ -41,7 +41,7 @@ Incluye:
 
 ### Apunte termodinámica
 
-[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Termodinamica.pdf) | 
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/12.11.20/Termodinamica-4.pdf) | 
 [Dirección Overleaf](https://www.overleaf.com/read/fjkwbxggwtvs)
 
 Incluye:
@@ -52,3 +52,4 @@ Incluye:
 - Justificación de fórmulas/conceptos
 
 ###### * La versión GitHub es probable que esté desactualizada
+###### ** Última actualización de la [versión GitHub](https://github.com/SirCrocker/Le-Touffe/releases/latest)
