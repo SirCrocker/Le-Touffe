@@ -25,7 +25,7 @@ Incluye:
 - Resultado útiles 
 - Sistema de Coordenadas
 - Tabla de Primitivas
-- Teoría hasta corriente eléctrica
+- Teoría al día
 - Ejercicios con solución para todos los temas
 
 ### Apunte Economía
@@ -34,7 +34,7 @@ Incluye:
 [Dirección Overleaf](https://www.overleaf.com/read/bhgfgpwdxwhf)
 
 Incluye:
-- Módulos del 0 al 5
+- Módulos del 0 al 8
 - Links a videos EOL
 - Glosario de términos
 - 1 Ejemplo
@@ -45,7 +45,6 @@ Incluye:
 [Dirección Overleaf](https://www.overleaf.com/read/fjkwbxggwtvs)
 
 Incluye:
-- Materia suficiente para C2
 - Notación
 - Fórmulas
 - Teoría _(Ahora con imágenes!)_
