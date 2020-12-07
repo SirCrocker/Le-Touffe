@@ -1,0 +1,331 @@
+\chapter{Cálculo Avanzado y Aplicaciones}
+
+\section{Cálculo Vectorial}
+
+\subsection{Campo Escalar}
+
+Sea $\Omega\subseteq\mathbb{R}^3$ un abierto no vacío, se llama campo escalar sobre $\Omega$ a toda función $f:\Omega\to\mathbb{R}$.
+
+\subsection{Campo Vectorial}
+
+Sea $\Omega\subseteq\mathbb{R}^3$ un abierto no vacío, se llama
+campo vectorial sobre $\Omega$ a toda función $f:\Omega\to\mathbb{R}^3$.
+
+\subsection{Divergencia}
+
+Sean $\Omega\subseteq\mathbb{R}^n$ abierto y $f:\Omega\to\mathbb{R}^n$ diferenciable, se define la divergencia de $f$ como
+
+\[\nabla\cdot f=\sum^n_{i=1} \frac{\partial f_i}{\partial x_i}\]
+
+El operador divergencia es una transformación lineal.
+
+\subsection{Rotor}
+
+Sea $f\in\mathcal{C}^1(\mathbb{R}^3,\mathbb{R}^3)$, se define el rotor de $f$ como
+
+\[\nabla\times f = \left(\frac{\partial f_z}{\partial y}-
+\frac{\partial f_y}{\partial z}\right)\hat{x}+
+\left(\frac{\partial f_x}{\partial z}-
+\frac{\partial f_z}{\partial x}\right)\hat{y}+
+\left(\frac{\partial f_y}{\partial x}-
+\frac{\partial f_x}{\partial y}\right)\hat{z}\]
+
+\subsection{Laplaciano}
+
+Sea $f\in\mathcal{C}^2(\mathbb{R}^n, \mathbb{R})$, se define el laplaciano de $f$ como
+
+\[\nabla^2 f = \nabla\cdot(\nabla f) =
+\sum^n_{i=1}\frac{\partial^2f}{\partial x_i^2}\]
+\bigbreak
+\bigbreak
+
+Para $F\in\mathcal{C}^2(\mathbb{R}^n, \mathbb{R})$ se define como
+
+\[\nabla^2 F = \sum^n_{i=0}\nabla^2F_i\hat{x_i}\]
+\bigbreak
+\bigbreak
+
+El operador laplaciano es una transformación lineal, también se suele notar como $\Delta$.\\
+
+Si un campo $\varphi$ verifica $\nabla^2\varphi=0$, se dice que $\varphi$ es armónico.
+
+\subsection{Sistemas Ortogonales}
+
+Un sistema de coordenadas en $\mathbb{R}$ está dado por tres variables que describen a un vector
+
+\[\Vec{r} = \Vec{r}(u,v,w)\]
+
+se definen los factores escalares del sistema como
+
+\[h_u=\left\|\frac{\partial\Vec{r}}{\partial u}\right
+\|\,\,\,\,\,\,\,\,
+h_v=\left\|\frac{\partial\Vec{r}}{\partial v}\right\|\,\,\,\,\,\,\,\,
+h_w=\left\|\frac{\partial\Vec{r}}{\partial w}\right\|\]
+
+Con lo cual, los vectores unitarios del sistema son
+
+\[\hat{u}=\frac{1}{h_u}\frac{\partial\Vec{r}}{\partial u}
+\,\,\,\,\,\,\,\,\,
+\hat{v}=\frac{1}{h_v}\frac{\partial\Vec{r}}{\partial v}\,\,\,\,\,\,\,\,\,
+\hat{w}=\frac{1}{h_w}\frac{\partial\Vec{r}}{\partial w}\]
+
+\bigbreak
+Se dice que un sistema es ortogonal si $\hat{u}$, $\hat{v}$ y $\hat{w}$ son ortogonales.
+
+\subsubsection{Operadores Diferenciales}
+
+\begin{itemize}
+    \item Gradiente:
+    \[\nabla f =
+    \frac{1}{h_u}\frac{\partial f}{\partial u}\hat{u}+
+    \frac{1}{h_v}\frac{\partial f}{\partial v}\hat{v}+
+    \frac{1}{h_w}\frac{\partial f}{\partial w}\hat{w}\]
+    \item Divergencia:
+    \[\nabla\cdot\Vec{F}=\frac{1}{h_uh_vh_w}\left(
+    \frac{\partial}{\partial u}(F_uh_vh_w) +
+    \frac{\partial}{\partial v}(h_uF_vh_w) +
+    \frac{\partial}{\partial w}(h_uh_vF_w)\right)\]
+    \item Rotor:
+    \[\left(\nabla\times\Vec{F}\right)_u = \frac{1}{h_vh_w}
+    \left(\frac{\partial}{\partial v}(F_wh_w)-
+    \frac{\partial}{\partial w}(F_vh_v)\right)\]
+    \[\left(\nabla\times\Vec{F}\right)_v = \frac{1}{h_uh_w}
+    \left(\frac{\partial}{\partial w}(F_uh_u)-
+    \frac{\partial}{\partial u}(F_wh_w)\right)\]
+    \[\left(\nabla\times\Vec{F}\right)_w = \frac{1}{h_vh_u}
+    \left(\frac{\partial}{\partial u}(F_vh_v)-
+    \frac{\partial}{\partial v}(F_uh_u)\right)\]
+\end{itemize}
+
+Demostraciones: \ref{Dem:Gradiente}; \ref{Dem:Rotor}
+
+\subsubsection{Uso de los Factores Escalares}
+
+Una característica importante de los factores escalares es que verifican
+
+\[\frac{\partial\Vec{r}}{\partial u} = h_u\hat{u}\]
+
+de modo que, cuando se trabaja con $\frac{\partial\Vec{r}}{\partial u}$ reemplazarlo por $h_u\hat{u}$ suele facilitar los cálculos puesto que $h_u$ es un escalar y $\hat{u}$ es un vector unitario además de ortogonal a $\hat{v}$ y $\hat{w}$.
+\medbreak
+Un ejemplo de esto es el cálculo de los diferenciales de linea, superficie y volumen para el sistema de coordenadas
+\medbreak
+\begin{itemize}
+    \item Linea:
+    \begin{equation}
+    \begin{split}
+        d\Vec{r} &= \frac{\partial\Vec{r}}{\partial t}dt\\
+        &= \frac{\partial\Vec{r}}{\partial u}
+        \frac{\partial u}{\partial t}dt +
+        \frac{\partial\Vec{r}}{\partial v}
+        \frac{\partial v}{\partial t}dt +
+        \frac{\partial\Vec{r}}{\partial w}
+        \frac{\partial w}{\partial t}dt\\
+        &= \frac{\partial\Vec{r}}{\partial u}du+
+        \frac{\partial\Vec{r}}{\partial v}dv+
+        \frac{\partial\Vec{r}}{\partial w}dw\\
+        &= h_u\,du\hat{u}+h_v\,dv\hat{v}+h_w\,dw\hat{w}\\
+    \end{split}
+    \nonumber
+    \end{equation}
+    \item Superficie:
+    \begin{equation}
+    \begin{split}
+        d\Vec{S} &= \left(\frac{\partial\Vec{r}}{\partial v}
+        \times\frac{\partial\Vec{r}}{\partial w}\right)dvdw+
+        \left(\frac{\partial\Vec{r}}{\partial w}
+        \times\frac{\partial\Vec{r}}{\partial u}\right)dwdu+
+        \left(\frac{\partial\Vec{r}}{\partial u}
+        \times\frac{\partial\Vec{r}}{\partial v}\right)dudv\\
+        &= (h_v\hat{v}\times h_w\hat{w})dvdw+
+        (h_w\hat{w}\times h_u\hat{u})dwdu+
+        (h_u\hat{u}\times h_v\hat{v})dudv\\
+        &= h_vh_w(\hat{v}\times\hat{w})dvdw+
+        h_wh_u(\hat{w}\times\hat{u})dwdu+
+        h_uh_v(\hat{u}\times\hat{v})dudv\\
+        &= h_vh_w\,dvdw\hat{u}+
+        h_wh_u\,dwdu\hat{v}+
+        h_uh_v\,dudv\hat{w}\\
+    \end{split}
+    \nonumber
+    \end{equation}
+    \item Volumen: \[dV = det(J\Vec{r})\,dudvdw = h_uh_vh_w\, dudvdw\]
+\end{itemize}
+
+\subsection{Curvas}
+
+se dice que $\Gamma\subseteq\mathbb{R}^n$ es una curva en $\mathbb{R}^n$ si existe una función continua $\Vec{r}:D\subseteq\mathbb{R}\to\mathbb{R}^n$ tal que
+
+\[\Gamma = \Vec{r}(D)\]
+
+A la función $\Vec{r}$ se le llama parametrización de $\Gamma$. A $\Gamma$ se le apoda:
+
+\begin{itemize}
+    \item \textbf{Suave}: si $\Vec{r}$ es de clase $\mathcal{C}^1$
+    \item \textbf{Simple}: si $\Vec{r}$ es de clase $\mathcal{C}^1$ e inyectiva
+    \item \textbf{Cerrada}: si es suave y admite una parametrización $\Vec{r}:[a,b]\to\mathbb{R}^n$ tal que $\Vec{r}(a)=\Vec{r}(b)$
+    \item \textbf{Regular}: si es suave y se verifica que
+    \[\forall t\in D:\, \left\|\frac{d\Vec{r}}{dt}(t)\right\|>0\]
+\end{itemize}
+
+\subsubsection{Parametrizaciones Equivalentes}
+
+Dos parametrizaciones $\Vec{r_1}:D\to\mathbb{R}^n$ y $\Vec{r_2}:E\to\mathbb{R}^n$ de una misma curva son equivalentes si existe una biyección $\theta\in\mathcal{C}^1(D,E)$ tal que
+
+\[\forall t\in D:\, \Vec{r_1}(t) = \Vec{r_2}(\theta(t))\]
+
+A $\theta$ se le denomina reparametrización. Si $\theta$ es creciente se dice que $\Vec{r_1}$ y $\Vec{r_2}$ recorren la curva en el mismo sentido, si es decreciente la recorren en sentidos opuestos.
+\medbreak
+Para toda curva $\Gamma$ simple y regular se cumple que
+
+\begin{itemize}
+    \item Si $\Gamma$ es cerrada, todas sus parametrizaciones inyectivas son equivalentes
+    \item Si $\Gamma$ no es cerrada, todas sus parametrizaciones regulares son inyectivas y equivalentes
+\end{itemize}
+
+\subsection{Integral de Linea}
+
+\subsubsection{Campos Escalares}
+
+\[\int_\Gamma f\, dr= \int f(\Vec{r}(t))\left\|
+\frac{d\Vec{r}}{dt}\right\|\,dt\]
+
+\subsubsection{Campos Vectoriales}
+
+A estas integrales se les llama integral de trabajo
+
+\[\int_\Gamma \Vec{F}\cdot d\Vec{r}=
+\int \Vec{F}(\Vec{r}(t))\frac{d\Vec{r}}{dt}\cdot dt\]
+
+Si $\Gamma$ es cerrada, se suele notar como
+
+\[\oint_\Gamma \Vec{F}\cdot d\Vec{r}\]
+
+\subsection{Superficies Parametrizables}
+
+Se dice que $S\subseteq\mathbb{R}^3$ es una superficie parametrizable si existe $\varphi:D\subseteq\mathbb{R}^2\to\mathbb{R}^3$ tal que
+
+\[S = \varphi(D)\]
+
+A la función $\varphi$ se le llama parametrización de $S$. A $S$ se le apoda:
+
+\begin{itemize}
+    \item \textbf{Suave}: si $\varphi$ es de clase $\mathcal{C}^1$
+    \item \textbf{Simple}: si $\varphi$ es inyectiva
+    \item \textbf{Cerrada}: si encierra a un volumen, es decir, existe $A\subseteq\mathbb{R}^3$ tal que\newline $S=\mathrm{Fr}(A)$
+\end{itemize}
+
+\subsubsection{Vectores Tangentes}
+
+Para un punto $(u_o, v_o)\in D$ tal que las derivadas parciales de $\varphi$ no se anulan, las funciones $u=\varphi(\cdot, v_o)$ y $v=\varphi(u_o, \cdot)$ descriven curvas en $S$. Se definen los vectores tangentes a $S$ en $\varphi(u_o, v_o)$ como
+
+\[\hat{t_u} = \frac{u'(u_o)}{\|u'(u_o)\|} = \frac{1}{\|u'(u_o)\|}
+\frac{\partial\varphi(u_o, v_o)}{\partial u}
+\,\,\,\,\,\,\,\,
+\hat{t_v} = \frac{v'(v_o)}{\|v'(v_o)\|} = \frac{1}{\|v'(v_o)\|}
+\frac{\partial\varphi(u_o, v_o)}{\partial v}\]
+
+Si $\hat{t_u}$ y $\hat{t_v}$ son linealmente independientes, se dice que $\varphi$ es regular.
+
+\subsubsection{Campo de Normales}
+
+Si $\varphi$ es regular, se define un campo de normales de $S$ como
+
+\begin{equation}
+\begin{split}
+    \hat{n}: &\,\,\,\,\,\,S\,\,\,
+    \longrightarrow \,\, \mathbb{R}^3\\
+    &(u, v) \longmapsto \hat{n}(u,v)
+    =\frac{\hat{t_u}\times\hat{t_v}}{\|\hat{t_u}
+    \times\hat{t_v}\|}\\
+\end{split}
+\nonumber
+\end{equation}
+
+los vectores $\hat{n}$ son perpendiculares a S.
+
+\subsubsection{Superficies Orientables}
+
+Se dice que $s$ es orientable si toda curva cerrada contenida en ella se puede recorrer en dos sentidos, esto equivale a decir que existen dos campos normales asociados a $S$ con signos opuestos. En una superficie orientable se pueden distinguir dos caras. Si además $\hat{n}$ es continua, entonces $S$ es regular orientable.
+
+\subsection{Integral de Superficie}
+
+\subsubsection{Campos Escalares}
+
+\[\int_S f\,dS = \iint f(\varphi(u, v))\left\|
+\frac{\partial\varphi}{\partial u}\times
+\frac{\partial\varphi}{\partial v}\right\|\,dudv\]
+
+\subsubsection{Campos Vectoriales}
+
+A estas integrales se les llama integral de flujo
+
+\begin{equation}
+\begin{split}
+\int_S \Vec{F}\cdot d\Vec{S} & = \int_S \Vec{F}\cdot\hat{n} \,dS\\
+& =\iint \Vec{F}(\varphi(u, v))\cdot\left(
+\frac{\partial\varphi}{\partial u}\times
+\frac{\partial\varphi}{\partial v}\right)\,dudv\\
+\end{split}
+\nonumber
+\end{equation}
+
+\subsection{Teorema de la Divergencia}
+
+Sean $\Omega\subseteq\mathbb{R}^3$ tal que $\partial\Omega=\mathrm{Fr}(\Omega)$ es una superficie cerrada regular orientable y $\Vec{F}\in\mathcal{C}^1(\Omega\cup\partial\Omega,\mathbb{R}^3)$, se verifica que
+
+\[\int_{\partial \Omega}\Vec{F}\cdot d\Vec{S}=
+\int_\Omega\nabla\cdot\Vec{F}\,dV\]
+
+con $\Vec{S}$ orientado al exterior de $\Omega$.
+
+\subsection{Teorema de Stokes o del Rotor}
+
+Sean $S\subseteq\mathbb{R}^3$ una superficie regular orientable cuyo borde $\partial S$ es una curva cerrada, simple y regular, y $\Vec{F}\in\mathcal{C}^1(S\cup\partial S,\mathbb{R}^3)$, se verifica que
+
+\[\oint_{\partial S}\Vec{F}\cdot d\Vec{r}=
+\int_S\nabla\times\Vec{F}\cdot d\Vec{S}\]
+
+\subsection{Teorema de Green}
+
+Sean $S\subseteq\mathbb{R}^2$ acotada tal que $\partial S = \mathrm{Fr}(S)$ es una curva cerrada, simple y regular, y $f,g$ campos escalares de clase $\mathcal{C}^1$, se verifica que
+
+\[\oint_{\partial S}f\,dx+g\,dy = \int_S
+\left(\frac{\partial g}{\partial x}-
+\frac{\partial f}{\partial y}\right)\,dxdy\]
+
+\subsection{Campos Conservativos}
+
+Sean $\Vec{F}$ un campo vectorial y $P$ un campo escalar, se dice que $\Vec{F}$ es conservativo y $P$ el potencial de $\Vec{F}$, si se verifica que
+
+\[\Vec{F} = \nabla P\]
+\bigbreak
+Alternativamente, se dice que $\Vec{F}$ es conservativo si $\Vec{F} = -\nabla U$. Esta definición se usa sobre todo en física, y es equivalente a decir $-U = P$.
+
+\bigbreak
+Se cumple además que, para $\Gamma$ una curva parametrizada por $\Vec{r}:[a,b]\to\mathbb{R}^3$
+
+\begin{equation}
+\begin{split}
+    \int_\Gamma\Vec{F}\cdot d\Vec{r} &=
+    \int^b_a\Vec{F}(\Vec{r})\cdot\frac{d\Vec{r}}{dt}\,dt\\
+    &=\int^b_a\nabla P(\Vec{r})\cdot\frac{d\Vec{r}}{dt}\,dt\\
+    &=\int^b_a\frac{d}{dt} P(\Vec{r})\,dt\\
+    &=P(\Vec{r}(b))-P(\Vec{r}(a))
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+Para $\Vec{F}$ un campo vectorial continuo sobre un abierto convexo $\Omega\subseteq\mathbb{R}^3$, son equivalentes:
+
+\begin{itemize}
+    \item $\Vec{F}$ es conservativo en $\Omega$
+    \item Para toda curva $\Gamma\subseteq\Omega$ cerrada y regular por pedazos se tiene
+    \[\oint_\Gamma\Vec{F}\cdot d\Vec{r}=0\]
+    \item Para todo par de curvas regulares $\Gamma_1, \Gamma_2\subseteq\Omega$ con iguales puntos inicial y final, se tiene
+    \[\int_{\Gamma_1}\Vec{F}\cdot d\Vec{r} =
+    \int_{\Gamma_2}\Vec{F}\cdot d\Vec{r}\]
+\end{itemize}
+
+Antes de realizar una integral de trabajo, siempre es conveniente verificar si el campo vectorial es conservativo, o si es de la forma $\Vec{F}=\nabla g + \Vec{G}$.
+
+\newpage

@@ -1,0 +1,59 @@
+\section{Demostraciones}
+
+\subsection{Gradiente en Coordenadas Ortogonales}
+
+\label{Dem:Gradiente}
+
+Dado que $\{\hat{u},\hat{v},\hat{w}\}$ es base ortonormal de $\R^3$, se cumple que
+
+\[\nabla f = \nabla f\cdot\hat{u}\,\hat{u}+
+\nabla f\cdot\hat{v}\,\hat{v}+\nabla f\cdot\hat{w}\,\hat{w}\]
+
+Con $f$ un campo escalar arbitrario. Por definición de los factores escalares, se tiene que
+
+\[\parfrac{\Vec{r}}{u}=h_u\hat{u}\]
+
+Con lo cual
+
+\[\nabla f\cdot\hat{u}=\frac{1}{h_u}
+\lados{(}{\nabla f\cdot\parfrac{\Vec{r}}{u}}=\frac{1}{h_u}
+\frac{f}{u}\]
+\\
+Aplicando esto a $\hat{v}$ y $\hat{w}$, se concluye que
+
+\[\nabla f = \frac{1}{h_u}\parfrac{f}{u}\hat{u}+
+\frac{1}{h_v}\parfrac{f}{v}\hat{v}+\frac{1}{h_w}\parfrac{f}{w}\hat{w}\]
+
+
+\subsection{Rotor en Coordenadas Ortogonales}
+\label{Dem:Rotor}
+Por linealidad del rotor, para $F$ un campo vectorial arbitrario, se cumple que
+
+\[\nabla\times F=\nabla\times(F_u\hat{u})+
+\nabla\times(F_v\hat{v})+\nabla\times(F_w\hat{w})\]
+
+
+Se verifica además que 
+
+\[\nabla u = \frac{1}{h_u}\hat{u}\]
+\\
+
+lo que implica $\hat{u}=h_u\nabla u$, con lo cual
+
+\begin{equation}
+\begin{split}
+    \nabla\times(F_u\hat{u})&=\nabla\times(F_uh_u\nabla u)\\
+    &=\nabla(F_uh_u)\times\nabla u+F_uh_u\nabla\times
+    \lados{(}{\nabla u}\\
+    &=\nabla(F_uh_u)\times\nabla u\\
+    &=\lados{(}{\frac{1}{h_u}\frac{\partial}{\partial u}
+    (F_uh_u)\hat{u}+\frac{1}{h_v}\frac{\partial}{\partial v}(F_uh_u)\hat{v}+\frac{1}{h_w}\frac{\partial}{\partial w}(F_uh_u)\hat{w}}\times\frac{1}{h_u}\hat{u}\\
+    &=\frac{1}{h_uh_v}\frac{\partial}{\partial v}(F_uh_u)(\hat{v}\times\hat{u})+\frac{1}{h_uh_w}\frac{\partial}{\partial w}(F_uh_u)(\hat{w}\times\hat{u})\\
+    &=\frac{-1}{h_uh_v}\frac{\partial}{\partial v}(F_uh_u)\hat{w}+\frac{1}{h_uh_w}\frac{\partial}{\partial w}(F_uh_u)\hat{v}\\
+\end{split}
+\nonumber
+\end{equation}
+\\
+Aplicando el mismo proceso a $\hat{w}$ y $\hat{v}$, se obtiene el rotor en coordenadas ortogonales.
+
+\newpage

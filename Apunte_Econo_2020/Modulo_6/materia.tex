@@ -1,0 +1,107 @@
+\section{Discriminación de precios y tarificación}
+La discriminación de precios es el intento del monopolista de apoderarse de parte (o todo) el excedente del consumidor más la pérdida de eficiencia.
+
+
+\subsection{Segmentos de mercado y monopolista}
+
+Un monopolio puede verse enfrentado a la demanda de distintos tipos de usuarios/clientes (como estudiantes, adultos mayores, público general, entre otros). Donde cada tipo de usuario puede poseer una curva de demanda distinta.\\
+
+Los tipos de usuarios se denominan \textit{segmentos}.
+
+\subsection{Demanda total}
+
+Es la suma de las demandas de todos los segmentos, pero sumando \underline{cantidades}, no precios. Por ejemplo
+
+\begin{equation}
+	\begin{split}
+		q_1 &= \text{máx}\{ S_1(P), 0 \}\\
+		q_2 &= \text{máx}\{ S_2(P), 0 \}
+	\end{split}
+	\nonumber
+\end{equation}
+
+Donde $S_1(P)$ y $S_2(P)$ pueden ser negativos según $P$. Así sea
+
+\begin{equation}
+	\begin{split}
+		S_1(P) &= \begin{cases} 
+					S_1 < 0 &\quad \text{si } a \leq P \leq b\\ 
+					S_1 > 0 &\quad \text{si } b \leq P
+					\end{cases}\\
+		S_2(P) &= \begin{cases} 
+					S_2 < 0 &\quad \text{si } a \leq P \leq c \leq b\\ 
+					S_2 > 0 &\quad \text{si } c \leq P
+					\end{cases}
+	\end{split}
+	\nonumber	
+\end{equation}
+
+Tenemos que $Q(P) = q_1 + q_2$, con
+
+\[ Q(P) = 
+\begin{cases}
+	0 &\quad \text{si } P \leq c\\
+	S_1(P) &\quad \text{si } c \leq P \leq b\\
+	S_2(P) + S_1(P) &\quad \text{si } b \leq P
+\end{cases}
+\]
+
+\subsection{Problema del monopolista}
+
+El monopolista quiere alcanzar $IMg = CMg$, en algunos casos $CMg$ puede hacerse \cita{infinito} en un punto si ya no se permite seguir vendiendo bienes.\\
+
+El monopolista puede cobrar precios específicos por segmento del mercado, es necesario que no exista fuga de clientes (o arbitraje) para llevar esto a cabo, es decir, que personas de un segmento $i$ puedan hacerse pasar por personas otro segmento $j$ distinto. O, que los bienes puedan ser revendidos, más barato en comparación a los precios de un segmento dado, por alguien de otro segmento.\\
+
+En estos casos la utilidad que recibe el monopolista se debe a la suma de los ingresos de todos los segmentos, y el problema de optimización, haciendo uso del ejemplo anterior se transforma en
+
+\begin{equation}
+	\begin{split}
+		\text{máx}& \{ I_1(q_1) + I_2(q_2) \}\\
+		\text{s.a }& g(q_1,q_2)
+	\end{split}
+	\nonumber
+\end{equation}
+
+El problema se resuelve haciendo uso de multiplicadores de Lagrange, obteniéndose los precios y cantidades óptimas.\\
+
+La utilidad ($\Pi$) puede ser mayor a la que se obtendría en el óptimo solo sumando demanda a un precio para todos, porque al cobrar precios diferentes el monopolio se aprovecha de las disposiciones a pagar del segmento, capturando más consumidores y a mejores precios.\\
+
+Es importante notar que el multiplicador de Lagrange será $\lambda^*$, esto representa la utilidad marginal de poder vender un bien más. Esto se evidencia con que, sea $aq_1 + bq_2 = \alpha$ entonces $IMg_{q_1} = a\lambda^*$ y $IMg_{q_2} = b\lambda^*$.
+
+\subsection{Precios múltiples}
+
+Así como existen segmentos de consumidores con diferentes disposiciones a pagar, también podemos encontrar que existen disposiciones a pagar diferentes por unidades adicionales de un producto.\\
+
+El vendedor monopólico podría diferenciar las \cita{primeras} unidades de las \cita{segundas}, \cita{terceras}, etc. Para ello puede construir curvas de demanda para cantidad a comprar.\\
+
+Estos precios pueden implementarse haciendo descuentos por volumen, siendo una condición que no exista fuga de clientes. 
+
+\subsection{Discriminación de precios}
+Se dice que un productor realiza discriminación de precios si 2 unidades del \txtsi{\cita{mismo bien}}{(\ref{misc:mismo_precio})} son vendidas a precios distintos (sea al mismo consumidor o a consumidores distintos).\\
+
+La discriminación de precios permite al monopolista capturar más excedentes de los consumidores, existen 3 tipos o grados de discriminación.
+
+\subsubsection{Discriminación de primer grado}
+\txtsi{\textbf{Ejemplo}}{(\ref{ejem:disc_1er_grado})}\\
+
+Si el monopolio pudiera cobrar a cada consumidor su disposición a pagar, entonces capturaría todo el excedente de los consumidores. Esto se conoce como discriminación de primer grado.\\
+
+En la práctica es muy difícil de lograr. Y es un caso socialmente eficiente, ya que la cantidad máxima de personas puede acceder al servicio/bien.
+
+\subsubsection{Discriminación de segundo grado}
+\txtsi{\textbf{Ejemplo}}{(\ref{ejem:disc_2do_grado})}\\
+
+Es el caso en que hay información incompleta. El monopolista conoce cuantos \cita{tipos} de consumidores hay, pero no los sabe distinguir \hyperlink{ex-ante}{ex-ante}. Utiliza mecanismos de selección, es decir combinaciones precio-cantidad, precio-calidad de modo que ellos mismos se discriminen.\\
+
+
+Es conocida también como la discriminación por volumen.
+
+\subsubsection{Discriminación de tercer grado}
+Utiliza alguna señal (edad, ocupación, localización) para hacer discriminación, diferenciar entre grupos y cobrar precios distintos (o generar multi-mercados).\\
+
+Es conocida también como discriminación por segmentación de consumidores, y también supone que no hay fuga/arbitraje.\\
+
+\textbf{Ejemplos:} descuentos para estudiantes, descuentos de la 3era edad, precios según localización.
+
+
+\newpage

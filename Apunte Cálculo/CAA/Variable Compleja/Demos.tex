@@ -1,0 +1,18 @@
+\section{Demos en Var Complej} % Temporal
+
+\subsection{Derivada de funciones} % Temporal
+
+\subsubsection{Función log} % Temporal
+% Puse como lo hizo Conca en clases, no se que tan bien se entienda en LaTeX
+Sea $z_0 \in \C$
+\begin{equation}
+\begin{split}
+    \log'(z_0) &= \lim_{h \to 0}\frac{\log(z_0 + h) - \log(z_0)}{h}\\
+            &= \lim_{h \to 0}\frac{\log\lados{(}{1 + \frac{h}{z_0}}}{\frac{h}{z_0}}\frac{1}{z_0}\\
+            &= \lim_{w \to 0}\frac{w}{\exp(w) - \exp(0)}\frac{1}{z_0}\\
+            &= \frac{1}{z_0}\frac{1}{\exp'(0)} = \frac{1}{z_0}
+\end{split}
+\nonumber
+\end{equation}
+
+\[w = \log\lados{(}{1 + \frac{h}{z_0}}\]

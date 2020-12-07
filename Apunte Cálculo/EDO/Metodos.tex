@@ -1,0 +1,50 @@
+\chapter{Ecuaciones Diferenciales Ordinarias}
+
+Sea $y: A\subseteq\mathbb{R}\to\mathbb{R}$ una función de clase $\mathcal{C}^n$, se define una EDO como la identidad
+
+\[F(x, y(x),y'(x),...,y^{(n)}(x))=0\]
+
+donde $x\in A$ es una variable arbitraria e $y$ es la incógnita.
+
+\begin{itemize}
+    \item \textbf{Orden:} El orden de una EDO es el nivel máximo de derivación de $y$.
+    \item\textbf{Grado:} El grado de una EDO es el exponente del término que determina el orden.
+\end{itemize}
+
+\section{EDO Lineal}
+
+Se denomina EDO lineal de orden $n$ a aquellas de forma
+
+\[\sum^n_{k=0}a_k(x)y^{(n)}=Q(x)\]
+
+A las funciones $\{a_k\}^n_{k=0}$ se les llama coeficientes y a $Q$ lado derecho. Si el lado derecho es nulo se dice que la EDO es homogénea.
+
+\subsection{Principio de Superposición}
+
+Sea $L(y)$ un \encuote{polinomio diferencial}
+
+\[L(y)=\sum^n_{k=0}a_ky^{(k)}\]
+
+el principio de superposición indica que si para $y_1,y_2\in \mathcal{C}^n$
+
+\[L(y_1)=P_1(x)\]
+\[L(y_2)=P_2(x)\]
+
+entonces se verifica que
+
+\[L(y_1+y_2) = L(y_1) + L(y_2) = P_1(x)+P_2(x)\]
+
+$L$ es una transformación lineal. Con esto, el kernel de $L$ 
+
+\[\mathcal{H} = \mathrm{ker}(L) = \{y_h\in\mathcal{C}^n\,|\,L(y_h)=0\}\]
+
+define el subespacio vectorial de las soluciones de la EDO homogénea
+
+\[\sum^n_{k=0}a_ky^{(k)}=0\]
+
+\subsection{EDO no Lineal}
+
+\textbf{\textit{Una EDO no lineal es una EDO que no es lineal}}
+
+
+\newpage

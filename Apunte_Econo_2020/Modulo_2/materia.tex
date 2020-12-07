@@ -1,0 +1,96 @@
+\section{Escasez}
+
+\econ{https://www.core-econ.org/the-economy/book/es/text/03.html}{3}
+\newline
+\newline
+Sea $Y = f(h)$ la función de producción, con $h$ el bien gastado en producir (puede ser horas, número de trabajadores, tierra utilizada, tiempo libre, etc). Se tendrá que:
+
+\begin{itemize}
+    \item \textbf{Producto medio}: $P_{Me} = \frac{f(h)}{h}$
+    \newline 
+    \newline Es la cantidad promedio de $Y$ conseguido con una cantidad $h$.
+    \item \textbf{Producto marginal}: $P_{Mg} = \frac{df(h)}{dh}$
+    \newline
+    \newline Es el incremento en $Y$ que se obtiene por usar (o gastar) una cantidad mayor o menor de $h$. \textit{(Literalmente la derivada)}
+    \newline También se puede ver como el retorno obtenido al usar distintas cantidades de $h$. \textit{(Cuanto Y cada h te da, que varía al aumentar o disminuir la cantidad de h)}
+\end{itemize}
+
+Donde la función de producción determina el conjunto factible de alternativas a elegir.
+
+\subsection{Costo de oportunidad} 
+\hyperlink{ejemplo-Costo de oportunidad}{Ejemplo}
+
+Es el costo de la alternativa a la que renunciamos cuando tomamos una determinada decisión, incluyendo los beneficios que podríamos haber obtenido de haber escogido la opción alternativa. 
+
+\subsection{Preferencias}
+
+Para escoger una opción se depende de los beneficios frente a las otras opciones, que está intrínsecamente ligado a las preferencias de la persona.
+\newline
+
+Las preferencias de una persona se modelan a través de la función de \hyperlink{utilidad}{utilidad} $U$, que indica la utilidad percibida al consumir cierta cantidad dada del bien.
+
+\subsubsection{Curvas de indiferencia}
+Cuando las opciones indiferentes entre sí se marcan, se da origen a una curva de indiferencia. (En esta curva la utilidad siempre posee el mismo valor). 
+\\
+
+\textbf{Propiedades de las curvas de indiferencia:}
+
+\begin{itemize}
+    \item Las curvas de indiferencia tienen pendiente negativa que refleja las disyuntivas que implican una cierta renuncia: \textit{si hay dos combinaciones ante las que nos mostramos indiferentes, necesariamente eso implica que la que tenga más de un bien tendrá menos del otro bien.}
+    \item Unas curvas de indiferencia más altas se corresponden a niveles de utilidad más altos: \textit{a medida que nos movemos hacia arriba y a la derecha en el diagrama, más lejos del origen, nos movemos a combinaciones que tienen más de ambos bienes.}
+    \item Las curvas de indiferencia son suaves por lo general: \textit{cambios pequeños en la cantidad de bienes no causan grandes saltos en la utilidad.}
+    \item Las curvas de indiferencia no se cruzan.
+    \item A medida que te mueves hacia la derecha a lo largo de una curva de indiferencia, esta se vuelve más plana.
+\end{itemize}
+
+El último punto hace referencia a la \textit{utilidad decreciente de los bienes}, que establece que mientras más de un bien se tiene (o consume), menor es la utilidad adicional que se le otorga.
+
+\subsection{Tasa marginal de sustitución (TMS)}
+Es la cantidad de bien del eje vertical que se está dispuesto a dar por 'un' bien del eje horizontal, su valor viene dado por la tangente en un punto de la curva de indiferencia.
+%Es cuanto se está dispuesto a dar por cada bien del eje vertical por algo del eje horizontal, 
+
+En el caso de que la función de producción venga dada por $y = f(x)$ con $U = U(x, y)$ \[TMS = \abs{\frac{\partial U}{\partial x} / \frac{\partial U}{\partial y}} = -\frac{\partial U}{\partial x} / \frac{\partial U}{\partial y}\]
+
+En palabras la fórmula anterior se puede escribir como
+\[\text{TMS} = \abs{\frac{\text{utilidad marginal de \textit{x}}}{\text{utilidad marginal de \textit{y}}}}\]
+
+\subsection{Optimización de la decisión}
+Siempre se busca maximizar la utilidad sujeta al conjunto factible, este óptimo se encuentra en la \hyperlink{frontera-factible}{frontera del conjunto factible} y/o en la curva de indiferencia de mayor utilidad ('arriba a la derecha').
+
+En el óptimo se cumple que la curva de indiferencia es tangente a la frontera factible y \[TMS = -P_{Mg}\] (Esto es equivalente a que las tangentes de la frontera factible y el producto marginal sean iguales)
+
+\subsubsection{Tasa marginal de transformación (TMT)}
+Cantidad de algún bien que debe sacrificarse para adquirir una unidad adicional de otro bien. En cualquier punto, es la pendiente de la frontera factible. Es equivalente a $-P_{Mg} \implies TMT = TMS$ también es válido para obtener óptimos.
+
+\subsection{Efecto neto}
+Es la suma del efecto ingreso y el efecto neto.
+
+\subsubsection{Efecto ingreso}
+Son los cambios en el consumo debido a una expansión en el conjunto factible, pero manteniendo el mismo trade-off entre cantidad consumida y tiempo libre.
+
+Se deriva de la perdida (o ganancia) del poder adquisitivo, es ajeno a la variación relativa de los precios.
+\\
+
+\textit{Se desplaza la frontera factible verticalmente}, puede causar que la cantidad de bien dispuesto a invertir disminuya.\\
+
+
+\subsubsection{Efecto sustitución}
+Es la variación del consumo de bien cuyo precio varía. Se deriva exclusivamente de la variación de los precios, y es por lo tanto, ajeno al cambio de poder adquisitivo.
+\\
+
+\textit{Se da únicamente por cambios en el precio o el costo de oportunidad, dado el nuevo nivel de utilidad}, puede causar que la cantidad de bien dispuesto a invertir aumente.
+
+\subsubsection{Como calcular los efectos}
+\href{https://www.core-econ.org/the-economy/book/es/text/leibniz-03-07-01.html}{Según CORE.\\}
+
+
+En un problema se obtienen valores de \textit{x} e \textit{y} en el óptimo, sean estos $x_0$ e $y_0$.
+
+Cuando hay un cambio en el problema/situación planteada para calcular el efecto ingreso hay que, obtener la nueva utilidad óptima y los valores de las variables correspondientes ($x_1$ e $y_1$), e intentar conseguir un ingreso que causaría que la utilidad óptima fuera igual a la del problema modificado ($x_2$ e $y_2$). Luego la diferencia de ''x'' ($x_2 - x_0$) es el efecto ingreso. Si es que la diferencia no es igual a la diferencia total ($x_2 - x_0 \neq x_1 - x_0$), entonces lo faltante es el efecto sustitución. 
+
+\subsection{Problemas de optimización}
+En estos problemas se intenta optimizar una función objetivo, para encontrar su mínimo o máximo. Esta está sujeta a restricciones, que ponen límites a las variables presentes en el problema. 
+\\
+
+Un ejemplo es maximizar la función utilidad $U(x_1,x_2)$ donde la restricción es que $g(x_1,x_2) \leq w$, con $w$ un valor. Aquí las variables son $x_1$ y $x_2$.
+\newpage

@@ -1,0 +1,284 @@
+\chapter{Resultados Útiles}
+
+\section{Identidades}
+
+En esta sección pondremos demostraciones e identidades que son necesarias o útiles para resolver varios problemas.
+
+\subsection{Sumatorias}
+
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    &\sum^{n}_{k=m} 1 = n - m + 1\\
+    &\sum^{n}_{k=m} a_{k} = \sum^{n\pm 1}_{k=m\pm 1} a_{k\mp 1}\\
+    &\sum^{n}_{k=m} a_{k} - a_{k+1} = a_{m} - a_{n+1}\\
+    &\sum^{n}_{k=0} k = \frac{n(n+1)}{2}\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    &\sum^{n}_{k=0} k^{2} = \frac{n(n+1)(2n+1)}{6}\\
+    &\sum^{n}_{k=0} k^{3} = {\frac{n(n+1)}{2}}^{2}\\
+    &\sum^{n}_{k=0} k\cdot k! = (n+1)! - 1\\
+    &\sum^{n}_{k=0} a^{k}b^{n-k} = \frac{a^{n+1}-b^{n+1}}{a-b}\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+
+\subsection{Límites}
+
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    & \lim_{x\to 0}\frac{\sin{x}}{x} = 1 \\
+    & \lim_{x\to 1}\frac{\ln{x}}{x-1} = 1\\
+    & \lim_{x\to 0}\frac{\ln{(x+1)}}{x} = 1\\
+    & \lim_{x\to 0}\frac{\tan{x}}{x} = 1\\
+    & \lim_{x\to 0}\frac{\arctan{x}}{x} = 1\\
+    & \lim_{x\to 0}\frac{x-\ln{(x+1)}}{x^2} = \frac{1}{2}\\
+    & \lim_{x\to 0}\frac{\alpha^x-1}{x} = \ln{\alpha}\\
+    & \lim_{x\to\infty}\frac{x+\sin{x}}{x-\sin{x}} = 1\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    & \lim_{x\to 0}\frac{\arcsin{x}}{x} = 1\\
+    & \lim_{x\to 0}\frac{e^x-1}{x} = 1\\
+    & \lim_{x\to 0}\frac{(1+x)^{\alpha}-1}{x} = \alpha\\
+    & \lim_{x\to 0}\frac{\tan{x}-x}{x^3} = \frac{1}{3}\\
+    & \lim_{x\to 0}\frac{1-\cos{x}}{x^2} = \frac{1}{2}\\
+    & \lim_{x\to 0}\frac{x-\sin{x}}{x^3} = \frac{1}{6}\\
+    & \lim_{x\to 0}\frac{f(a+x)+f(a-x)-2f(a)}{x^2} = f''(a)\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+
+\subsubsection{Funciones Asintóticamente Equivalentes}
+
+Dadas dos funciones reales $f$ y $h$, se dice que son asintóticamente equivalentes en $a$ si cumplen que
+
+\[\lim_{x\to a}\frac{f(x)}{h(x)} = 1\]
+
+y se nota como $f(x)\sim h(x)(x\to a)$. Al calcular el límite de un producto o cociente de funciones, se puede reemplazar una de ellas por otra asintóticamente equivalente.
+
+\subsubsection{Criterio de Equivalencia Logarítmica}
+
+Dadas dos funciones reales positivas $f$ y $h$, si $\lim_{x\to a}f(x) = 1$, se verifica que
+
+\begin{equation}
+\begin{split}
+    \lim_{x\to a}f(x)^{h(x)} = e^L &\Leftrightarrow
+    \lim_{x\to a}h(x)(f(x)-1) = L\\
+    \lim_{x\to a}f(x)^{h(x)} = +\infty &\Leftrightarrow
+    \lim_{x\to a}h(x)(f(x)-1) = +\infty\\
+    \lim_{x\to a}f(x)^{h(x)} = 0 &\Leftrightarrow
+    \lim_{x\to a}h(x)(f(x)-1) = -\infty\\
+\end{split}
+\nonumber
+\end{equation}
+\newpage
+\subsection{Notación de Landau}
+
+Dadas dos funciones $f, h:A\subseteq E \to F$ tales que
+
+\[\lim_{x\to a}\frac{f(x)}{h(x)} = 0\]
+
+se dice que $f$ es un infinitésimo de orden superior a $h$ en el punto $a$ y se nota como $f = o(h)$.
+
+\subsection{Series de Taylor}
+
+\[\sum^n_{k=0}\frac{f^{(k)}(a)}{k!}(x-a)^k\]
+
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    & e^x = 1+\sum_{k=1}^n \frac{x^k}{k!} + o(x^n)\\
+    & \sin{x} = \sum_{k=1}^n \frac{(-1)^{k+1}}{(2k-1)!}x^{2k+1} +o(x^{2n})\\
+    & \cos{x} = \sum_{k=0}^n \frac{(-1)^k}{(2k)!}x^{2k} +o(x^{2n+1})\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    & \ln{x+1} = \sum_{k=1}^n \frac{(-1)^{k+1}}{k}x^k +o(x^n)\\
+    & \arctan{x} = \sum_{k=1}^n\frac{(-1)^{k+1}}{2k-1}x^{2k-1} +o(x^{2n})\\
+    &\arcsin{x} = \sum_{k=1}^n\frac{\prod_{i=1}^k2k-1}{\prod_{i=1}^k2k}
+    \frac{x^{2k+1}}{2k+1}+o(x^{2n+2})\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+
+\subsection{Identidades Trigonométricas}
+
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    & \sin{x} = \cos{(x-\pi/2)}\\
+    & \sin{(a\pm b)} = \sin{a}\sin{b}\pm\cos{a}\cos{b}\\
+    & 1+\tan^2{x} = \sec^2{x}\\
+    & \sin{(\arccos{x})} = \sqrt{1-x^2}\\
+    & \arccos'{x} = \frac{-1}{\sqrt{1-x^2}}\\
+    & \tan{x/2} = \frac{1-\cos{x}}{\sin{x}}\\
+    & \sin{a}\pm\sin{b} = 2\sin{\frac{a\pm b}{2}}\cos{\frac{a\mp b}{2}}\\
+    & \cos{a}-\cos{b} = -2\sin{\frac{a+b}{2}}\sin{\frac{a-b}{2}}\\
+    & \sin{a}\cdot\sin{b} = \frac{1}{2}(\cos{(a-b)}-\cos{(a+b)})\\
+    & \tan{(a\pm b)}=\frac{\tan{a}\pm\tan{b}}{1\mp \tan{a}\tan{b}}\\
+    & \sin{x/2}=\sqrt{\frac{1-\cos{x}}{2}}\\
+    & \sin^2{x}=\frac{1-\cos{2x}}{2}\\
+    & \sin{(\arctan{x})} = x\sqrt{\frac{1}{1+x^2}}\\
+    &\arcsin{x}+\arccos{x}=\frac{\pi}{2}\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    & \cos{x} = \sin{(x+\pi/2)}\\
+    & \cos{(a\pm b)} = \cos{a}\cos{b}\mp\cos{a}\cos{b}\\
+    & 1+\cot^2{x} = \csc^2{x}\\
+    & \cos{(\arcsin{x})} = \sqrt{1-x^2}\\
+    & \arcsin'{x} = \frac{1}{\sqrt{1-x^2}}\\
+    & \tan{x/2} = \frac{\sin{x}}{1+\cos{x}}\\
+    & \cos{a}+\cos{b} = 2\cos{\frac{a+b}{2}}\cos{\frac{a-b}{2}}\\
+    & \cos{a}\cdot\cos{b} = \frac{1}{2}(\cos{(a+b)}+\cos{(a-b)})\\
+    & \sin{a}\cdot\cos{b} = \frac{1}{2}(\sin{(a+b)}+\sin{(a-b)})\\
+    & \cos^2{x}+\sin^2{x} = 1\\
+    & \cos{x/2}=\sqrt{\frac{1+\cos{x}}{2}}\\
+    & \cos^2{x}=\frac{1+\cos{2x}}{2}\\
+    & \cos{(\arctan{x})} = \sqrt{\frac{1}{1+x^2}}\\
+    & \tan'{x}=1+\tan^2{x}\\
+    & \cos^4{x}-\sin^4{x}=\cos{2x}\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+
+\subsection{Identidades Hiperbólicas}
+
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    &\sinh{x}=\frac{e^x-e^{-x}}{2}\\
+    &\sinh'{x}=\cosh{x}\\
+    &\sinh^{-1}{x}=\ln{(x+\sqrt{x^2+1})}\\
+    &\sinh{\cosh^{-1}{x}}=\sqrt{x^2-1}\\
+    &\frac{d}{dx}(\sinh^{-1}{x})=\frac{1}{\sqrt{x^2+1}}\\
+    &\tanh'{x}=1-\tanh^2{x}\\
+    &e^x=\cosh{x}+\sinh{x}\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    &\cosh{x}=\frac{e^x+e^{-x}}{2}\\
+    &\cosh'{x}=\sinh{x}\\
+    &\sinh^{-1}{x}=\ln{(x+\sqrt{x^2-1})}\\
+    &\sinh{\cosh^{-1}{x}}=\sqrt{x^2-1}\\
+    &\frac{d}{dx}(\cosh^{-1}{x})=\frac{1}{\sqrt{x^2-1}}\\
+    &\cosh^2{x}-\sinh^2{x}=1\\
+    &e^{-x}=\cosh{x}-\sinh{x}\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+
+\subsection{Números Complejos}
+
+Para $z,w\in\mathbb{C}$ arbitrarios, se verifica que
+% No había entendido que te referías a esto exactamente, gracias por agregarlo!
+\newline
+\begin{minipage}{0.5\textwidth}
+\begin{equation}
+\begin{split}
+    &\overline{z+w}=\Bar{z}+\Bar{w}\\
+    &\overline{zw}=\Bar{z}\Bar{w}\\
+    &\Bar{z}=z\Leftrightarrow z\in\mathbb{R}\\
+    &\Bar{\Bar{z}}=z\\
+    &z\Bar{z}=|z|^2\\
+    &\mathrm{Re}(z)=\frac{1}{2}(z+\Bar{z})\\
+    &\mathrm{Im}(z)=\frac{1}{2i}(z-\Bar{z})\\
+    &\mathrm{arg}(\Bar{z}) = 2\pi-\mathrm{arg}(z)\\
+    &\mathrm{arg}(zw)=\mathrm{arg}(z)+\mathrm{arg}(w)\,\,
+    \mathrm{mod}\,2\pi\\
+    &i^i=e^{\frac{-\pi}{2}}
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+
+\subsubsection{Raíz de la unidad}
+
+Dados $k\in\mathbb{N}$ y $z \in \mathbb{C}$, se tiene que
+
+\[z^k=1\Leftrightarrow z\in\{e^{\lambda i\frac{2\pi}{k}}\}^{k-1}_{\lambda=0}\]
+
+\newpage
+\subsection{Identidades Diferenciales}
+
+Para $F,G$ campos vectoriales, $f,g$ campos escalares, todas de clase $\mathcal{C}^2$, se verifica que
+
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    &\nabla\cdot(\nabla\times F) = 0\\
+    &\nabla\cdot(fF) = f\nabla\cdot F+F\cdot\nabla f\\
+    &\nabla\cdot(F\times G) = G\cdot\nabla\times F -
+    F\cdot\nabla\times G\\
+    &\nabla^2(fg) = f\nabla^2g + 2\nabla f\cdot \nabla g
+    + g\nabla^2f\\
+    &\nabla^2F=\nabla(\nabla\cdot F)-\nabla\times(\nabla\times F)\\
+    &\nabla\times(\nabla f) = 0\\
+    &\nabla\times(fF) = f(\nabla\times F)+\nabla f\times F\\\
+    &\nabla\cdot(\nabla f\times\nabla g) = 0\\
+    &\nabla(f\nabla g- g\nabla f) = f\nabla^2g- g\nabla^2f\\
+    &\nabla\times (F\times G) = (\nabla\cdot G)F-
+    (\nabla\cdot F)G+(\mathrm{J}F)G-(\mathrm{J}G)F\\
+    &\nabla(F\cdot F)=2(\mathrm{J}F)F+2F\times\nabla\times F\\
+    &\nabla(F\cdot G)=(\mathrm{J}F)G+(\mathrm{J}G)F
+    +F\times\nabla\times G + G\times\nabla\times F\\
+    &\nabla (fg) = f\nabla g  + g\nabla f\\
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+
+\subsection{Fórmulas Varias}
+$\,\,\,\,\,\,$\medbreak
+\textbf{Binomio de Newton:}
+
+\[(x+y)^n = \sum^n_{k=0}\frac{n!}{k!(n-k)!}x^{n-k}y^k\]
+
+\bigbreak
+\textbf{Desigualdad de las medias:}
+
+\[\left(\prod^n_{i=1}x_i\right)^{\frac{1}{n}}
+\leq \frac{1}{n}\sum^n_{i=1}x_i\]
+
+\bigbreak
+\textbf{Fórmula de Wallis:}
+
+\[\lim_{n\to\infty}\frac{1}{n}
+\left(\frac{\prod^n_{k=1}2k}
+{\prod^n_{k=1}2k-1}\right)^2 = \pi\]
+
+\bigbreak
+\textbf{Fórmula de Stirling:}
+
+\[\lim_{n\to\infty}\frac{n!e^n}{n^n\sqrt{n}}=\sqrt{2\pi}\]
+
+
+\newpage
