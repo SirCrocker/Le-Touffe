@@ -1,0 +1,669 @@
+\subsection{Soluciones}
+
+\begin{solucion}{1}
+\ics a
+En coordenadas cilíndricas, la velocidad de una carga dentro del disco es
+
+\[\Vec{v}=\rho\dot{\phi}\hat{\phi}=\rho\omega\hat{\phi}\]
+
+con lo cual la densidad de corriente es
+
+\[\Vec{K}(\rho) = \sigma\omega\rho\hat{\phi}\]
+
+\ics b
+En coordenadas esféricas, la velocidad de una carga de la esfera es
+
+\[\Vec{v}=\dot{r}\hat{r} + r(\dot{\phi}cos(\theta)\hat{\phi}+\dot{\theta}\hat{\theta}=
+r\omega\cos(\theta)\hat{\phi}\]
+
+además, la densidad de carga volumétrica es
+
+\[\rho = \frac{3Q}{4\pi R^2}\]
+
+con lo que la densidad de corriente está dada por
+
+\[\Vec{J}(r,\phi,\theta)=\frac{3Q}{4\pi R^2}r\omega\cos(\theta)\hat{\phi}\]
+
+\end{solucion}
+
+\bigbreak
+
+\begin{solucion}{2}
+\ics a 
+Se tiene que para un cilindro, su resistencia viene dada por su conductividad/resistividad ($g/\eta$), altura ($h$) y superficie ($S$) de la siguiente manera
+\[R = \frac{1}{g}\frac{h}{S} = \eta\frac{h}{S}\]
+
+Como fue demostrado en la sección de resultados útiles \ref{ru:resist_cilindro}.\\
+
+Con esto en mente, se puede considerar que un cono truncado es equivalente a una suma infinitesimal de cilindros de altura $dh$, con superficies que varían desde el radio menor del cono truncado al radio mayor. Así
+
+\[dR = \eta \frac{dh}{dS} = \eta \frac{dh}{\pi r^2dr}\]
+
+Donde $R = \int dR$, estableciendo el origen en la cara superior del cono truncado intersectado con su eje \cita{mirando hacia abajo}, la resistencia del cono truncado es
+
+\begin{eqit}
+    R &= \int dR\\
+    &= \int_0^h \int_{a}^{a+b} \frac{\eta}{\pi}\frac{1}{r^2}dr\,dl\\
+    &= \frac{\eta}{\pi}\int_0^h\ dl \int_{a}^{a+b} \frac{1}{r^2}dr\\
+    &= \frac{\eta}{\pi}h\lados{[}{-\frac{1}{r}}\Big|_a^{a+b} = \frac{h \eta}{\pi}\frac{b}{a(a+b)}
+\end{eqit}
+% No sé
+% Cómo es E?
+% Normal a las caras? con forma de cono?
+% Sobre que superficie se integra para la intensidad?
+% En todos los discos entre A y B?
+% R depende de la altura?
+
+% Puse algo que creo que posee sentido, busqué en internet y encontré algo similar. Para la b) creo que hay usar la misma idea, pero superponiendo cilindros de "resistencia negativa" y dividiendolos en la sección que corresponde. 
+
+\ics b
+% Más de lo mismo
+% Supongo que cuando dice "entre las caras" hay que asumir que solo en esas cara se distribuye carga
+
+% Yep, que cruza de una a la otra cara solamente
+
+\end{solucion}
+
+\bigbreak
+
+\begin{solucion}{3}
+\ics a
+Como la densidad de corriente es uniforme, la intensidad es
+
+\[I =\int\Vec{J}\cdot d\Vec{S} = \int J\,dS =J\int dS = \pi a^2J\]
+
+y, por ley de Ohm, para una diferencia de potencial $V_0$ se verifica que
+
+\begin{equation}
+\begin{split}
+    V_0 &= -\int^0_{l\hat{x}}\Vec{E}\cdot d\Vec{r}\\
+    &= -\int^0_{l\hat{x}}\frac{1}{g}\Vec{J}\cdot d\Vec{r}\\
+    &= \int^l_0\frac{e^{-x/l}}{g_o}J\,dx\\
+    &= \frac{Jl}{g_o}(1-e^{-1})\\
+\end{split}
+\nonumber
+\end{equation}
+
+de lo cual se deduce
+
+\begin{equation}
+\begin{split}
+    &\Vec{J}=\frac{V_0g_o}{l(1-e^{-1})}\hat{x}\\
+    &I=\frac{\pi a^2V_0g_o}{l(1-e^{-1})}\\
+    &R=\frac{V_0}{I}=\frac{l(1-e^{-1})}{\pi a^2 g_o}\\
+    &\Vec{E}=\frac{V_0e^{-x/l}}{l(1-e^{-1})}\hat{x}\\
+\end{split}
+\nonumber
+\end{equation}
+
+\ics b
+Como en $l$ el potencial es nulo, se tiene que
+
+\begin{equation}
+\begin{split}
+    V(x) &= V(x) - V(l)\\
+    &= -\int^{x\hat{x}}_{l\hat{x}}\Vec{E}\cdot d\Vec{r}\\
+    &= -\int^x_l\frac{V_0e^{-x'/l}}{l(1-e^{-1})}\,dx'\\
+    &= \frac{V_0(e^{-x/l}-e^{-1})}{(1-e^{-1})}\\
+    &= \frac{V_0(e^{1-x/l}-1)}{(e-1)}\\
+\end{split}
+\nonumber
+\end{equation}
+% no sé hacer esto sin permitividad 
+% Creo que la permitividad es \epsilon_0, ya que es un conductor. 
+
+% Este problema está en C2-Montesinos 2017-1 y ocupan epsilon_0, pondré lo que me dio
+
+\ics c 
+La carga libre en el sistema es toda la carga que puede fluir por este, se puede obtener usando la ecuación de Maxwell $\nabla\cdot\Vec{E} = \rho/\epsilon_0$, al ser un conductor no dieléctrico, y luego integrando $\rho$ en el volumen del cilindro, así
+
+\begin{eqit}
+    \rho &= \epsilon_0\nabla \cdot \Vec{E}\\
+    &= \epsilon_0\parfrac{E(x)}{x}\\
+    &= \epsilon_0\lados{(}{\frac{V_0}{l(1-e^{-1})}\frac{-1}{l}e^{-x/l}}
+\end{eqit}
+
+Con el valor de $\rho$ obtenido se integra en todo el volumen haciendo uso de coordenadas cilíndricas con $x$ en vez de $z$,
+
+\begin{eqit}
+    Q &= \int_\V \rho d\V\\
+    &= \int_0^a \int_0^{2\pi} \int_0^l\rho(x) r\,dx\,d\phi\,dr\\
+    &= \pi a^2 \int_0^l \epsilon_0\frac{V_0}{l(1-e^{-1})}\frac{-1}{l}e^{-x/l}\,dx\\
+    &= \epsilon_0 \pi a^2 \frac{V_0}{l(1-e^{-1})} \lados{[}{e^{-x/l}}\Big|_0^l\\
+    &= \epsilon_0 \pi a^2 \frac{V_0}{l(1-e^{-1})} (e^{-1} - 1)\\
+    &= -\epsilon_0 \pi a^2 \frac{V_0}{l}
+\end{eqit}
+
+% Que la carga sea negativa calza teoricamente, no? 
+
+% Sapone dice en su apunte de electro página 69: "Si los portadores de carga son negativos (como en los conductores), [...]" lo que me hace pensar que si calza
+
+Si los conductores están en equilibrio, los campos en su interior son nulos, por lo tanto, debido a las condiciones de borde del desplazamiento eléctrico, las densidades de carga superficial en los extremos son
+
+\begin{eqit}
+    &\sigma_o = \epsilon_o E(0) = \frac{\e_oV_0e}{l(e-1)}\\
+    &\sigma_l = -\epsilon_o E(l) = -\frac{\e_oV_0}{l(e-1)}\\
+\end{eqit}
+
+Luego, las cargas superficiales son
+
+\begin{eqit}
+    &Q_o = \int \sigma_o\,dS = \sigma_o\int dS = \frac{\e_oV_0e\pi a^2}{l(e-1)}\\
+    &Q_l = \int \sigma_o\,dS = -\frac{\e_oV_0\pi a^2}{l(e-1)}\\
+\end{eqit}
+
+La carga libre total es
+
+\[Q_L = Q+Q_o+Q_l = \frac{\e_oV_0\pi a^2}{l}\lados{(}{\frac{e}{e-1}-\frac{1}{e-1}-1}=0\]
+% Gracias por escribirlo y agregarlo c:
+\ics d
+La potencia disipada en el sistema es
+
+\[P = \frac{V_0^2}{R} = \frac{g_oV_o^2\pi a^2}{l(1-e^{-1})}\]
+
+Como $P$ no es nula, existe energía disipada a lo largo del tiempo junto con variación de energía electrostática.
+
+% a dónde va y de dónde viene no hace falta responderlo.
+
+% Si hay una fuente, no se tendría que la energía disipada sería proveída por la fuente, causando que U no cambiaría pero si habría disipación de energía? (Así además se mantendría la corriente estacionaria)
+
+\ics e % ahora resulta que había una fuente | xddd
+Si se desconecta la fuente, dejaría de ingresar energía al sistema y eventualmente toda la energía del mismo se disiparía en forma de calor. Esto implica que $\Delta V = 0$, es decir, las cargas se reordenan homogéneamente 
+
+\ics f
+El periodo transitorio es el tiempo entre que la fuente se desconecta, y la corriente deja de fluir por el cilindro. Sabiendo que cuando deja de fluir corriente (o hay una diferencia de potencial igual a cero), no hay energía en el sistema a causa de que ya no hay campos eléctricos presentes, se tiene que la variación de energía será el opuesto aditivo de la energía electroestática presente en el sistema. \\
+
+Además, toda la energía electroestática presente en el periodo estacionario será disipada en forma de calor por el Efecto Joule cuando se desconecte la fuente.
+
+\begin{eqit}
+    \Delta U &= U_{fin} - U_{estacionario}\\    
+    &=0 - \frac{\epsilon_o}{2}\int \norma{\Vec{E}}^2\, d\V\\
+    &= -\frac{\e_0}{2}\int \lados{(}{\frac{V_0e^{-x/l}}{l(1-e^{-1})}}^2\,d\V\\
+    &= -\frac{\e_0}{2}\frac{V_0^2}{l^2(1-e^{-1})^2}\int\,dS_{cara}\int_0^le^{-2x/l}\,dx\\
+    &= -\frac{\e_0}{2}\frac{V_0^2\pi a^2}{l^2(1-e^{-1})^2}\lados{[}{ \frac{l}{2}-\frac{e^{-2}l}{2}}\\
+    &= \frac{\e_0V_0^2\pi a^2}{l(1-e^{-1})^2}\lados{[}{\frac{e^{-2} - 1}{4}}
+\end{eqit}
+
+Es importante notar que en este caso se hace uso de está definición de la energía electroestática del sistema a causa de que la permivitidad del conductor es $\epsilon_0$. Y como solo hay campos eléctricos presentes en el cilindro con resistencia\indeciso{M}{ (\ref{teo:conductores_perfectos})}, entonces se puede integrar solo en este.
+
+\indeciso{E}{
+Por ecuación de continuidad se tiene que
+
+\[\nabla\cdot\Vec{J}=\parfrac{J}{x}=-\parfrac{\rho}{t}\]
+
+Desarrollando la ecuación
+
+\begin{equation}
+\begin{split}
+  -\parfrac{\rho}{t} &= \nabla\cdot\Vec{J}\\
+  &=\parfrac{J}{x}\\
+  &=\parfrac{gE}{x}\\
+\end{split}
+\nonumber
+\end{equation}
+}
+
+\end{solucion}
+
+\bigbreak
+
+\begin{solucion}{4}
+\ics a
+Inmediatamente después de conectar el potencial no ha habido movimiento de cargas, $\rho = 0$.\\
+
+Por geometría del sistema (\ref{SimetríaPlanosInf}), se tiene que $\Vec{D}(\Vec{r})=D(z)\hat{z}$ y, por primera ecuación de Maxwell, que $\nabla\cdot\Vec{D}=0$, por lo tanto el desplazamiento eléctrico es
+
+\[\Vec{D}=D\hat{z}\]
+
+con $D$ constante. Luego,
+
+\begin{equation}
+\begin{split}
+    V_0 &= -\int^0_{(a+b)\hat{z}}\Vec{E}\cdot d\Vec{r}\\
+    &= -\int^0_{a+b}E\,dz\\
+    &= -\int^0_a\frac{D}{\epsilon}\,dz
+    -\int^a_{a+b}\frac{D}{\epsilon_o}\,dz\\
+    &= \frac{aD}{\epsilon}+\frac{bD}{\epsilon_o}\\
+\end{split}
+\nonumber
+\end{equation}
+
+se concluye que
+
+\[\Vec{D}=\frac{V_0}{\frac{a}{\epsilon}+\frac{b}{\epsilon_o}}\hat{z}
+=\frac{V_0\epsilon_o\epsilon}{a\epsilon_o+b\epsilon}\hat{z}\]
+
+Para $0<z<a$
+
+\begin{equation}
+\begin{split}
+    &\Vec{E}_a=\frac{V_0\epsilon_o}{a\epsilon_o+b\epsilon}\hat{z}\\
+    &\Vec{J}_a=\frac{gV_0\epsilon_o}{a\epsilon_o+b\epsilon}\hat{z}\\
+\end{split}
+\nonumber
+\end{equation}
+
+Para $a<z<a+b$
+
+\begin{equation}
+\begin{split}
+    &\Vec{E}_b=\frac{V_0\epsilon}{a\epsilon_o+b\epsilon}\hat{z}\\
+    &\Vec{J}_b=0\\
+\end{split}
+\nonumber
+\end{equation}
+
+\ics b
+Después de un tiempo largo se alcanza el estado estacionario, es decir, $\parfrac{\rho}{t}=0$. Por ley de continuidad la densidad de carga es uniforme.\\
+
+En $0<z<a$ se tiene
+
+\begin{equation}
+\begin{split}
+    &\Vec{J}_a=J_a\hat{z}\\
+    &\Vec{E}_a=\frac{J_a}{g}\hat{z}\\
+    &\Vec{D}_a=\epsilon\frac{J_a}{g}\hat{z}\\
+\end{split}
+\nonumber
+\end{equation}
+
+Por condición de borde, para $z=a$, se cumple que
+
+\[J_b-J_a=0\]
+
+como en $a<z<a+b$ no hay conductividad, $J_b$ es nula, lo que implica
+
+\begin{equation}
+\begin{split}
+    &\Vec{J}_a=0\\
+    &\Vec{E}_a=0\\
+    &\Vec{D}_a=0\\
+\end{split}
+\nonumber
+\end{equation}
+
+En $a<z<a+b$ se tiene
+
+\begin{equation}
+\begin{split}
+    &\Vec{E}_b=\frac{D_b}{\epsilon_o}\hat{z}\\
+    &\Vec{D}_b=D_b\hat{z}\\
+\end{split}
+\nonumber
+\end{equation}
+
+luego,
+
+\begin{equation}
+\begin{split}
+    V_0 &= -\int^0_{a+b}\Vec{E}\cdot\hat{z}\,dz\\
+    &= -\int^0_a E_a\,dz- \int^a_{a+b}\frac{D_b}{\epsilon_o}\,dz\\
+    &= \frac{D_b}{\epsilon_o}b
+\end{split}
+\nonumber
+\end{equation}
+
+se concluye que
+
+\begin{equation}
+\begin{split}
+    &\Vec{E}_b=\frac{V_0}{b}\hat{z}\\
+    &\Vec{D}_b=\frac{V_0\epsilon_o}{b}\hat{z}\\
+\end{split}
+\nonumber
+\end{equation}
+
+\ics c
+Por las ecuaciones de borde, se verifica que
+
+\begin{equation}
+\begin{split}
+    &J_a(t) = \parfrac{\sigma}{t}\\
+    &D_b(t) - D_a(t) = D_b(t) - \frac{\epsilon}{g}J_a(t) = \sigma\\
+\end{split}
+\nonumber
+\end{equation}
+
+donde $D_b$ y $J_a$ son constantes en el espacio y variables en el tiempo. Se tienen así dos ecuaciones y tres incógnitas: $D_b$, $J_a$ y $\sigma$. La tercera ecuación se obtiene de la diferencia de potencial.
+
+\begin{equation}
+\begin{split}
+    V_o &= -\int^0_aE_a\,dz -\int^a_{a+b}E_b\,dz\\
+    &= -\int^0_a\frac{J_a}{g}\,dz
+    -\int^a_{a+b}\frac{D_b}{\epsilon_o}\,dz\\
+    &= \frac{J_a}{g}a + \frac{D_b}{\epsilon_o}b\\
+\end{split}
+\nonumber
+\end{equation}
+
+Despejando $D_b$ se obtiene
+
+\[D_b=\frac{\epsilon_o}{g}\lados{(}{V_0-\frac{J_a}{g}a}\]
+
+reemplazando $D_b$ en la ecuación de borde para el desplazamiento eléctrico y derivando respecto al tiempo, se llega a la EDO
+
+\[-\frac{a\epsilon_o+b\epsilon}{bg}\parfrac{J_a}{t}
+=\parfrac{\sigma}{t}=J_a\]
+
+cuya solución es de forma
+
+\[Ae^{-\frac{bg}{a\epsilon_o+b\epsilon}t}\]
+
+de la parte $a)$ se deduce que
+
+\[J_a = \frac{gV_0\epsilon_o}{a\epsilon_o+b\epsilon}
+e^{-\frac{bg}{a\epsilon_o+b\epsilon}t}\]
+
+Luego,
+
+\begin{equation}
+\begin{split}
+    D_b &= \frac{V_0\epsilon_o}{b}-
+    \frac{a}{b}\frac{V_0\epsilon_o^2}{a\epsilon_o+b\epsilon}
+    e^{-\frac{bg}{a\epsilon_o+b\epsilon}t}\\
+    \sigma &= \int^t_0J_a(t')\,dt'\\
+    &= -\frac{V_0\epsilon_o}{b}\lados{(}{e^{-\frac{bg}{a\epsilon_o+b\epsilon}t}-1}\\
+\end{split}
+\nonumber
+\end{equation}
+
+Definiendo
+
+\[\omega = \frac{-bg}{a\epsilon_o+b\epsilon}\]
+
+se tiene que
+
+\begin{equation}
+\begin{split}
+    &\Vec{D}_a = -\frac{V_0\epsilon_o\epsilon}{bg}\omega
+    e^{\omega t}\hat{z}\\
+    &\Vec{D}_b = \lados{(}{1+\frac{a\epsilon_o\omega}{bg}e^{\omega t}}
+    \frac{V_0\epsilon_o}{b}\hat{z}\\
+    &\Vec{E}_a = -\frac{V_0\epsilon_o}{bg}\omega
+    e^{\omega t}\hat{z}\\
+    &\Vec{E}_b = \lados{(}{1+\frac{a\epsilon_o\omega}{bg}e^{\omega t}}
+    \frac{V_0}{b}\hat{z}\\
+    & \Vec{J}_a = -\frac{V_0\epsilon_o}{b}\omega
+    e^{\omega t}\hat{z}\\
+    & \Vec{J}_b = 0\\
+\end{split}
+\nonumber
+\end{equation}
+
+\ics d
+Haciendo uso del campo eléctrico y el desplazamiento eléctrico encontrado en $c)$, se despeja la polarización de la capa.
+
+\begin{eqit}
+    \Vec{P}_a &= \Vec{D}_a - \e_0\Vec{E}_a\\
+    &= \lados{(}{-\frac{V_0\epsilon_o\epsilon}{bg}\omega
+    e^{\omega t} +\e_0\frac{V_0\epsilon_o}{bg}\omega
+    e^{\omega t}}\hat{z}\\
+    &= \frac{(\e_0 - \e)V_0\e_0}{bg}\omega e^{\omega t}\hat{z}
+\end{eqit}
+
+Con esto las densidades de polarización serán:
+\begin{itemize}
+    \item \textbf{En la superficie inferior} $(z=0)$
+    \[ \sigma_{p(z=0)} = \Vec{P}(z=0)\cdot (-\hat{z}) = \frac{(\e - \e_0)V_0\e_0}{bg}\omega e^{\omega t} \]
+    
+    \item \textbf{En la superficie superior} $(z=a)$
+    \[ \sigma_{p(z=a)} = \Vec{P}(z=a)\cdot \hat{z} = \frac{(\e_0 - \e)V_0\e_0}{bg}\omega e^{\omega t} \]
+    
+    \item \textbf{En la capa}
+    \[ \rho_p = -\nabla \cdot \Vec{P} = 0 \]
+    Al ser $\Vec{P}$ independiente de $z$
+    
+\end{itemize}
+
+Con lo que la carga de polarización es la suma de estas integradas en las superficies correspondientes. Notemos que $\sigma _{p(z=0)} = -\sigma _{p(z=a)}$, y que ambas son constantes, así sea $S$ la superficie de las placas, $Q_p = S\sigma _{p(z=0)} + S\sigma _{p(z=a)} = 0$.\\
+
+Para calcular la carga libre en el sistema, se puede hacer uso de $\oint \Vec{D}\cdot dS = Q_{libre}$, donde la superficie es la de las placas. Se puede usar el desplazamiento eléctrico $D_b$, ya que envuelve a todo el sistema por lo que al calcular la carga libre con este, se obtendrá la total.
+
+\begin{eqit}
+    Q_{libre} &= \oint \Vec{D}_b\cdot dS\\
+    &= \lados{(}{1+\frac{a\epsilon_o\omega}{bg}e^{\omega t}}
+    \frac{V_0\epsilon_o}{b}S\\
+\end{eqit}
+
+Obteniéndose la carga libre en el sistema en función del tiempo.
+
+\ics e
+Para encontrar la variación se puede calcular la energía almacenada en $t=0$ y en $t=\infty$, y restando ambos encontrarla.
+
+\begin{eqit}
+    U_{t=0} &= \frac{1}{2}\int\Vec{E}_{t=0}\cdot\Vec{D}_{t=0}\,d\V\\
+    &= \frac{1}{2}\int_S\lados{(}{\int^a_0\lados{(}{\frac{V_0\epsilon_o}{a\epsilon_o+b\epsilon}}^2\epsilon\,dz+\int^{a+b}_a\lados{(}{\frac{V_0\epsilon}{a\epsilon_o+b\epsilon}}^2\epsilon_o\,dz}\,dS\\
+    &= \frac{S\epsilon_o\epsilon}{2}\lados{(}{\frac{V_0}{a\epsilon_o+b\epsilon}}^2(a\epsilon_o+b\epsilon)\\
+    &= \frac{S\epsilon_o\epsilon}{2}\frac{V_0^2}{a\epsilon_o+b\epsilon}\\
+    \\
+    U_{t=\infty}&= \frac{1}{2}\int\Vec{E}_{t=\infty}\cdot\Vec{D}_{t=\infty}\,d\V\\
+    &= \frac{1}{2}\int_S\lados{(}{\int^a_0\Vec{E}_{a,t=\infty}\cdot\Vec{D}_{a,t=\infty}\,dz+\int^{a+b}_a\Vec{E}_{b,t=\infty}\cdot\Vec{D}_{b,t=\infty}\,dz}\,dS\\
+    &= \frac{1}{2}\int_S\int^{a+b}_a\frac{V_0^2\epsilon_o}{b^2}
+    \,dzdS\\
+    &= \frac{SV_0^2\epsilon_o}{2b}\\
+    \\
+    \Delta U &= U_{t=\infty} - U_{t=0}\\
+    &= \frac{SV_0^2\epsilon_o}{2b}-\frac{S\epsilon_o\epsilon}{2}\frac{V_0^2}{a\epsilon_o+b\epsilon}\\
+    &= \frac{SV_0^2\epsilon_o}{2}\lados{(}{\frac{1}{b}-\frac{\epsilon}{a\epsilon_o+b\epsilon}}\\
+\end{eqit}
+
+Como es pedida la energía almacenada en el sistema, se integra en el volumen correspondiente a este, es decir en el paralelepípedo de cara $S$ y alto $a+b$.
+
+Durante este periodo, la energía disipada viene dada por
+\begin{eqit}
+    U_{disipada} &= U = \int_{0}^{\infty}\int_V(\Vec{E}\cdot \Vec{J})d\V dt\\
+    &= \int_0^\infty \lados{(}{\int_0^a \Vec{E}_a\cdot \Vec{J}_a\,d\V + \int_a^{a+b}\Vec{E}_b\cdot \Vec{J}_b\,d\V}\,dt\\
+    &=\int_0^\infty\lados{(}{\int_0^a \frac{V_0^2\e_0^2}{b^2g}\omega^2\e^{2wt} \,d\V + 0}\,dt\\
+    &= \int_0^\infty\lados{(}{\frac{V_0^2\e_0^2}{b^2g}\omega^2 e^{2wt}S(a+b)}\,dt\\
+    &= \frac{V_0^2\e_0^2}{b^2g}\omega S(a+b)\int_0^\infty \omega e^{2wt}\,dt\\
+    &= \frac{V_0^2\e_0^2}{b^2g}\omega S(a+b) \lados{[}{\frac{e^{2wt}}{2}}\Big|_0^\infty\\
+    &= -\frac{V_0^2\e_0^2\omega S(a+b)}{2b^2g} > 0 \quad \quad (\omega < 0)
+\end{eqit}
+
+La energía procede de la fuente, que aporta lo que se pierde por efecto Joule y algo más para cargar al sistema. (Si no se mantendría siempre en el estado $t=0$)
+
+\end{solucion}
+
+\bigbreak 
+
+\begin{solucion}{5}
+\ics a
+Por la simetría del sistema se cumple que, en coordenadas esféricas, $\Vec{E}(\Vec{r})= E(r)\hat{r}$. Por condición de borde, se sabe que las componentes del de $\Vec{E}$ tangenciales a la interfase son iguales. En este caso, para $\theta = \frac{\pi}{2}$, $\hat{r}$ es tangente a la interfaz entre el dieléctrico y el vacío, de modo que el campo eléctrico es descrito por la misma función para todo el espacio entre las esferas.\\
+
+Definiendo $\vec{D}_0$ como el desplazamiento en el vacío y $\vec{D}_1$ en el dieléctrico para $a<r<b$, en el instante inicial ($t=0$) se tiene que
+
+\begin{eqit}
+    Q_0 &= \oint\Vec{D}(0,r)\cdot d\vec{S}\\
+    &= \int^{2\pi}_0\lados{(}{\int^{\frac{\pi}{2}}_0D_0(0,r)\sin{
+    \theta}\,d\theta+\int^\pi_{\frac{\pi}{2}}D_1(0,r)\sin{
+    \theta}\,d\theta}r^2\,d\phi\\
+    &= 2\pi r^2(D_0(0,r)+D_1(0,r))\\
+    &= 2\pi r^2(\epsilon_o+\e)E(0,r)\\
+\end{eqit}
+\begin{eqit}
+    D_0(0,r) &= \frac{Q_0\epsilon_o}{2\pi (\e_o+\e)r^2}\\
+    \\
+    D_1(0,r) &= \frac{Q_0\epsilon}{2\pi (\e_o+\e)r^2}\\
+\end{eqit}
+
+%Aplicando las condiciones de borde en la superficie de la esfera interior, denotando con 2 al interior del conductor, se obtienen las siguientes ecuaciones
+
+%\begin{eqit}
+%    &D_0(t,a) - D_2(t,a)= \sigma_a\quad \theta\in[0,\frac{\pi}{2}]\\
+%    &D_1(t,a) -D_2(t,a)= \sigma_a\quad \theta\in[\frac{\pi}{2},\pi]\\
+%    &J_2(t,a)= \parfrac{\sigma_a}{t}\quad \theta\in[0,\frac{\pi}{2}]\\
+%    &J_1(t,a)-J_2(t,a) = -\parfrac{\sigma_a}{t}\quad \theta\in[\frac{\pi}{2},\pi]\\
+%\end{eqit}
+
+\end{solucion}
+
+\bigbreak
+
+\begin{solucion}{6}
+\ics a
+A causa de la simetría del sistema, si se supone que $L \gg b$, se tiene que en coordenadas cilíndricas $\Vec{E}(\Vec{r})=E(\rho)\hat{\rho}$. Por lo que $\Vec{J}$ también solo depende de $\rho$. Por condiciones de borde se tiene que los campos eléctricos serán iguales en los tres medios conductores, al ser tangenciales entre sí.\\
+
+Superponiendo un cilindro de largo $L$ y radio arbitrario $\rho$ fijo, con $a < \rho < b$, se puede usar la Ley de Gauss para calcular el campo eléctrico, donde la carga $Q_*$ será calculada explícitamente después.
+(Es importante notar que se puede ocupar la Ley de Gauss a causa de que la permitividad en los tres conductores es $\e_0$)
+
+\begin{eqit}
+    \oint \Vec{E}\cdot d\Vec{S} &= \frac{Q_*}{\e_0}\\
+    \implies E(\rho)2\pi \rho L &= \frac{Q_*}{\e_0}\\
+    \implies E(\rho) &= \frac{Q_*}{2\pi \e_0 L}\frac{1}{\rho}\\
+    \implies \vec{E}(\rho) &= \frac{Q_*}{2\pi \e_0 L}\frac{1}{\rho}\hat{\rho}
+\end{eqit}
+
+Para despejar $Q_*$ integramos para el potencial
+
+\begin{eqit}
+    V_0 &= -\int_b^aE(\rho)\,d\rho\\
+    &= -\int_b^a \frac{Q_*}{2\pi \e_0 L}\frac{1}{\rho}\,d\rho\\
+    &= -\frac{Q_*}{2\pi \e_0 L}\ln\lados{(}{\frac{a}{b}}\\
+\end{eqit}
+
+\[\implies Q_* = \frac{V_0\e_02\pi L}{\ln(b/a)}\]
+
+Con lo que queda que 
+\[\vec{E}(\rho) = \frac{V_0}{\ln(b/a)}\frac{1}{\rho}\hat{\rho}\]
+
+Con esto se tiene que ($i \in \{1,2,3\}$),
+
+\[\vec{J}_i(\rho) = g_i\frac{V_0}{\ln(b/a)}\frac{1}{\rho}\hat{\rho}\]
+
+Notemos que $\vec{J}_i$ cumple con el estado de régimen estacionario, al ser $\dvr \vec{J}_i = 0$ en coordenadas cilíndricas.\\
+
+Para calcular la resistencia eléctrica usamos $R = V/I$, donde $I$ es la integral de la densidad de corriente eléctrica sobre la superficie y $V = V_0$. Calculando la corriente
+
+\begin{eqit}
+    I &= \int\vec{J}\cdot d\vec{S}\\
+    &= \int_0^L\int_0^{2\pi/3}J_1\rho d\phi dz + \int_0^L\int_{2\pi/3}^{4\pi/3}J_2\rho d\phi dz + \int_0^L\int_{4\pi/3}^{2\pi}J_3\rho d\phi dz\\
+    &= \frac{2\pi L}{3}\frac{V_0}{\ln(b/a)}\lados{(}{g_1 + g_2 + g_3}
+\end{eqit}
+
+Así la resistencia es
+\[ R = \frac{3\ln(b/a)}{2\pi L(g_1 + g_2 + g_3)} \]
+
+\ics b
+Se tiene que al desconectar la fuente a causa del Efecto Joule la energía disminuirá hasta llegar a cero, al igual que la diferencia de potencial. Por lo que la corriente, al depender de la diferencia de potencial, también disminuirá.\\
+
+Haciendo uso de las condiciones de borde para el desplazamiento eléctrico y la densidad de corriente eléctrica en la superficie $\rho = a$, tenemos que $J = \parfrac{\sigma}{t}$ y $D = \sigma$, al ser $J = D = 0$ en el conductor, al no haber campo eléctrico dentro de este. Así se puede despejar $\sigma$, dando $\sigma(t) = \sigma_0e^{-t(g/\e_0)}$. Tomando en cuento que en $t=0$, $\sigma = \sigma_0 = Q_*/(2\pi aL)$, tenemos la densidad superficial en todo momento.\\
+
+Haciendo uso de la simetría del problema, y de la densidad superficial podemos despejar el campo eléctrico entre $a < \rho < b$, con la Ley de Gauss (la permitividad es $\e_0$). Lo que da
+
+\[ \vec E(\rho) = \frac{\sigma(t)}{\e_0}\frac{a}{\rho}\hat{\rho} \]
+
+Así para calcular la corriente eléctrica, se tiene
+
+\begin{eqit}
+    I &= \int\vec{J}\cdot d\vec{S}\\
+    &= \int_0^L\int_0^{2\pi/3}J_1\rho d\phi dz + \int_0^L\int_{2\pi/3}^{4\pi/3}J_2\rho d\phi dz + \int_0^L\int_{4\pi/3}^{2\pi}J_3\rho d\phi dz\\
+    &= \int_0^L\int_0^{2\pi/3}g_1a\frac{\sigma(t)}{\e_0} d\phi dz + \int_0^L\int_{2\pi/3}^{4\pi/3}g_2a\frac{\sigma(t)}{\e_0} d\phi dz + \int_0^L\int_{4\pi/3}^{2\pi}g_3a\frac{\sigma(t)}{\e_0} d\phi dz\\
+    &= \frac{2 \pi L}{3\e_0}\frac{Q_*}{2\pi aL}ae^{-t(g/\e_0)}(g_1+g_2+g_3)\\
+    &= \frac{Q_*}{3\e_0}e^{-t(g/\e_0)}(g_1+g_2+g_3)
+\end{eqit}
+
+Que calza con la corriente obtenida para el estado estacionario ($t=0$), y con que en infinito se hacer cero la corriente ($t=\infty$). 
+
+\ics c
+Se tiene que durante el periodo transitorio toda la energía potencial electroestática será liberada en forma de calor a causa del efecto Joule. Por lo que la cantidad de energía disipada será igual a la energía potencial electroestática existente antes de desconectar la fuente.\\
+
+Esta energía procede del movimiento de cargas aun existente, originalmente esta energía fue proveída por la fuente. 
+
+\end{solucion}
+
+\bigbreak
+
+\begin{solucion}{7}
+\ics a
+Sea $S$ el área de la superficie de las placas.\\
+
+Se tiene que justo al conectar la batería y dotar de la densidad volumétrica $\rho_0$ no existe carga entre el conductor superior y el inferior. Por lo que la condición de borde para el desplazamiento eléctrico nos \cita{dice} que los campos eléctricos en $x = a$ han de ser iguales (la permitividad es $\e_0$ para ambos conductores.)\\
+
+Usando la Ley de Gauss para el campo eléctrico y notando que, debido a que la corriente irá desde $x=0$ a $x=a+b$ el campo eléctrico apunta en $\hat{x}$, y solo depende de $x$. Sea $Q_0$ la carga ubicada en la placa inferior,
+
+\[ \oint E(x)\,dS = \frac{Q_{\text{lib enc}}}{\e_0}\]
+\[
+    \implies \vec E (x) = 
+        \begin{cases}
+            \frac{S\rho_0x + Q_0}{S\e_0} & 0 < x < a\\
+            \\
+            \frac{aS\rho_0 + Q_0}{S\e_0} & a < x < a+b
+        \end{cases}
+\]
+
+Con lo que se tiene que
+\[ \vec J (x) = 
+        \begin{cases}
+            g_1\frac{S\rho_0x + Q_0}{S\e_0} & 0 < x < a\\
+            \\
+            g_2\frac{aS\rho_0 + Q_0}{S\e_0} & a < x < a+b
+        \end{cases}\]
+
+Para despejar $Q_0$ usamos que la diferencia de potencial entre $x=a+b$ y $x=0$ es $V_0$,
+
+\begin{eqit}
+    V_0 &= V(0) - V(a+b)\\
+    &= -\int_{a+b}^0\vec E \cdot \,d\vec l\\
+    &= -\int_{a+b}^a\frac{aS\rho_0 + Q_0}{S\e_0}dx - \int_a^0\lados{(}{\frac{\rho_0}{\e_0}x + \frac{Q_0}{S\e_0}}\,dx\\
+    &= b\frac{aS\rho_0 + Q_0}{S\e_0} + \frac{\rho_0}{\e_0}\frac{a^2}{2} + \frac{Q_0}{S\e_0}a\\
+    \implies Q_0 &= \frac{S}{a+b}\lados{[}{V_0\e_0 - \rho_0ab - \frac{\rho_0a^2}{2}}
+\end{eqit}
+
+Finalmente las cargas libres serán
+\begin{itemize}
+    \item Carga libre total volumétrica
+    \[Q_v = \rho a S\]
+    
+    \item Carga libre en la capa inferior
+    \[Q_{inf} = Q_0\]
+    
+    \item Carga libre en la capa superior
+    \[Q_{sup} = -Q_{inf} - Q_v\]
+    
+    Al ser el sistema neutro, causando que la suma de cargas libres sea cero. También puede sacarse haciendo uso de la condición de borde para el desplazamiento eléctrico.
+\end{itemize}
+
+\ics b
+En estado estacionario $\vec J$ es constante, ya que por ecuación de continuidad ya no hay cambio en la cantidad de carga almacenada. Así
+\[\vec J_1 = J_1\hat x \quad \land \quad \vec J_2 = J_2\hat x\]
+
+Además por condición de borde se tiene que $J_1 = J_2$, lo que implica que $g_1E_1 = g_2E_2$, donde $1$ es el conductor inferior y $2$ el superior. Como $J_1 y J_2$ son constantes entonces al ser $g_1$ y $g_2$ también, $E_1$ y $E_2$ también lo son. Como aún se tiene una diferencia de potencial $V_0$ se puede integrar y encontrar otra relación entre ambos campos eléctricos para despejarlos.
+
+\begin{eqit}
+    V_0 &= V(0) - V(a+b)\\
+    &= -\int_{a+b}^aE_2\,dx - \int_a^0E_1\,dx\\
+    &= E_2b + E_1a\\
+\end{eqit}
+
+Reemplazando $E_1 = \frac{g_2}{g_1}E_2$ en la ecuación anterior da que
+\[\vec E_2 = \frac{V_0g_1}{bg_1 + ag_2}\hat x\]
+Y por lo tanto 
+\[\vec E_1 = \frac{V_0g_2}{bg_1 + ag_2}\hat x\]
+
+Las cargas libres se pueden obtener haciendo uso de la Ley de Gauss para el desplazamiento eléctrico, las condiciones de borde para el desplazamiento eléctrico y que la suma total de las cargas ha de dar cero.\\
+
+Notemos que haciendo uso de la forma diferencial de la ley de Gauss para el desplazamiento eléctrico ($\dvr \vec D = \rho_l$) da que $\rho_l = 0$, al ser $\vec D = \e_0\vec E = cte\hat x$, así que habrá carga libre solo en las superficies de las placas.\\
+
+Usando la condición de borde para el desplazamiento tenemos que la densidad de carga superficial en $x=a$ es
+\begin{eqit}
+    \sigma_{x=a} &= D_2 - D_1 = \frac{\e_0V_0(g_1-g_2)}{bg_1+ag_2}
+\end{eqit}
+
+De la misma manera sabiendo que los campos eléctricos fueras de las placas son cero, entonces da que 
+
+\begin{eqit}
+    \sigma_{x=0} &= \frac{\e_0V_0g_2}{bg_1 + ag_2}\\
+    \sigma_{x=a+b} &= -\frac{\e_0V_0g_1}{bg_1 + ag_2}
+\end{eqit}
+
+Donde las cargas libres totales son $S\sigma_{x=0}$, $S\sigma_{x=a}$ y $S\sigma_{x=a+b}$.
+
+\ics c
+En el régimen estacionario no hay variación de energía electroestática almacenada en el sistema, a causa de que esta está almacenada en los campos eléctricos y como estos no varían en el régimen estacionario (son independietnes del tiempo), entonces la energía se mantiene constante.
+
+\ics d
+Si existe energía disipada a lo largo del tiempo a causa del efecto Joule, esta energía se va a los conductores que la liberan en forma de calor. Y proviene de la fuente, que otorga la misma cantidad de energía disipada para mantener la energía electroestática del sistema constante.
+
+\end{solucion}
+
+\newpage

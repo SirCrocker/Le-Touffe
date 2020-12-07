@@ -1,0 +1,243 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}       % Librerías matemáticas
+\usepackage{amsthm}        % Definición de teoremas
+\usepackage{array}         % Nuevas características a las tablas
+\usepackage{bigstrut}      % Líneas horizontales en tablas
+\usepackage{bm}            % Caracteres en negrita en ecuaciones
+\usepackage{booktabs}      % Permite manejar elementos visuales en tablas
+\usepackage{caption}       % Leyendas
+\usepackage{changepage}    % Condicionales para administrar páginas
+\usepackage{chngcntr}      % Añade números a las leyendas
+\usepackage{color}         % Colores
+\usepackage{datetime}      % Fechas
+\usepackage{enumitem}      % Listas con letras
+\usepackage{floatpag}      % Maneja números de páginas
+\usepackage{floatrow}      % Permite administrar posiciones en los caption
+\usepackage{framed}        % Permite creación de recuadros
+\usepackage{gensymb}       % Simbología común
+\usepackage{graphicx}      % Propiedades extra para los gráficos
+\usepackage{lipsum}        % Permite crear párrafos de prueba
+\usepackage{listings}      % Permite añadir código fuente
+\usepackage{longtable}     % Permite utilizar tablas en varias hojas
+\usepackage{mathtools}     % Permite utilizar notaciones matemáticas
+\usepackage{multicol}      % Múltiples columnas
+\usepackage{needspace}     % Maneja los espacios en página
+\usepackage{pdflscape}     % Modo página horizontal de página
+\usepackage{pdfpages}      % Permite administrar páginas en pdf
+\usepackage{physics}       % Paquete de matemáticas
+% \usepackage{ragged2e}    % Redefine centering
+\usepackage{rotating}      % Permite rotación de objetos
+\usepackage{selinput}      % Compatibilidad con acentos
+\usepackage{setspace}      % Cambia el espacio entre líneas
+\usepackage{soul}          % Permite subrayar texto
+\usepackage{subfig}        % Permite agrupar imágenes
+\usepackage{textcomp}      % Simbología común
+\usepackage{url}           % Permite añadir enlaces
+\usepackage{wrapfig}       % Posición de imágenes
+\usepackage{xspace}        % Adminsitra espacios en párrafos y líneas
+\usepackage{amsmath}
+%\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{siunitx}
+\usepackage{environ}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{xstring}  % If - Condiciones para comandos
+\usepackage[spanish,british]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan
+}
+%\usetikzlibrary{fadings}
+%\usetikzlibrary{patterns}
+%\usetikzlibrary{shadows.blur}
+%\usetikzlibrary{shapes}
+
+
+% CONFIG
+
+% Contador de problemas, se reinicia con la sección
+\newcounter{problemas}[section]
+
+% Crea un nuevo problema. Consiste en el P.nº sección.nº problema en una caja, al lado derecho hay un hyperlink a la solución correspondiente.
+\newcommand{\newpbm}{\stepcounter{problemas}\begin{flushleft}\boxed{\textbf{P.\thesection.\arabic{problemas}}} \hyperlink{S.\thesection.\arabic{problemas}}{Sol} \end{flushleft}}%
+
+\newcommand{\np}{\newpbm} % Alias por si prefieres
+
+% Crea una solución
+\newcommand{\sol}[1]{\hypertarget{S.\thesection.#1}{\hspace{1px}}\boxed{\textbf{S.\thesection.#1}}} % Hay que insertar el número de problema a mano, después se podría automatizar/mejorar
+
+% Ambiente solución con enumerate
+\newenvironment{enum_sol}[1]
+    {
+    \hypertarget{S.\thesection.#1}
+   \text{ }\boxed{\textbf{S.\thesection.#1}}
+    \begin{enumerate}[label=\alph*)]
+    }
+    { 
+    \end{enumerate}
+    }
+
+% Ambiente solución sin enum - ayuda a diferenciar entre soluciones en código (espero) 
+\newenvironment{solucion}[1]{
+    \hfill\\
+    \hypertarget{S.\thesection.#1}
+    \text{}\boxed{\textbf{S.\thesection.#1}}
+    \hfill\\
+    }{}
+
+% Crea incisos
+\newcommand{\ics}[1]{%
+    \hfill\\
+    $#1)$
+    }%
+
+\newcommand{\norma}[1]{\| #1 \|}%
+\newcommand{\kte}{4\pi\epsilon_0}
+
+% Derivada parcial
+% Modo de uso: \parfrac{ Función a derivar }{ Variable c/r a que se deriva }
+\newcommand{\parfrac}[2]{\frac{\partial #1}{\partial #2}}
+
+% Derivada común
+% Modo de uso: \deriv{ :función a derivar: }{ :var c/r a que se deriva: }
+\newcommand{\deriv}[2]{\frac{d #1}{d #2}}
+
+% Paréntesis grandes en comando 
+% Modo de uso: \lados{ :tipo de parentésis: }{ :Ecuación: }
+\newcommand{\lados}[2]{%
+    \IfEqCase{#1}{%
+        {(}{\left( #2 \right)}%
+        {)}{\left( #2 \right)}%
+        {()}{\left( #2 \right)}%
+        {[}{\left[ #2 \right]}%
+        {]}{\left[ #2 \right]}%
+        {[]}{\left[ #2 \right]}%
+        {\{}{\left\{ #2 \right\}}%
+        {\}}{\left\{ #2 \right\}}%
+    }[\PackageError{lados}{Opción no definida: #1}{}]%
+}%
+
+% Volumen (letra 'V' fancy)
+% Modo de uso: \V
+\newcommand{\V}{\mathcal{V}}
+
+% Ambiente Imagen básica
+% \bimage[ :width: ]{image_link}
+\newcommand{\bimage}[2][0.5\textwidth]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = #1]{#2}
+    \end{figure}
+}
+
+% Ambiente equation + split en uno solo SIN número
+% Modo de uso: \begin{eqit} :mi ecuación: \end{eqit}
+% Requisitos: \usepackage{environ}
+\NewEnviron{eqit}{%
+    \begin{equation}%
+        \begin{split}%
+            \BODY
+        \end{split}%
+        \nonumber
+    \end{equation}
+}% gracias
+
+% Comillas, cita o enquote
+% Modo de uso: \cita{ :texto: }
+\newcommand{\cita}[1]{``#1''}
+
+% Sinónimo de epsilon, me daba flojera escribir \epsilon
+% Modo de uso: \e
+\newcommand{\e}{\epsilon}
+% si pones "\ep" es la primera opción ksdkkad | xdd, ya lo ocupe algunas veces así que lo dejaré
+
+% Permite escribir código y esconderlo si no quieres que se siga mostrando, es una opción a '%'. M -> Mostrar, E -> Esconder.
+% Modo de uso: \indeciso{ :M: o :E: }{ :código indeciso: }
+% Requisitos: \usepackage{xstring}
+\newcommand{\indeciso}[2]{%
+    \IfEqCase{#1}{
+    {M}{#2}%
+    {E}{}%
+    }[\PackageError{indeciso}{Argumento debe ser E o M.}{}]}
+
+
+% Divergencia
+% Modo de uso: \dvr :campo vectorial:
+\newcommand{\dvr}[1]{\nabla \cdot #1}
+
+% Rotor
+% Modo de uso:
+\newcommand{\rot}[1]{\nabla \times #1}
+
+% -\hyperlink{label}{link}
+%    -\hypertarget{label}{target}
+
+\title{Apunte Electro}
+\author{\textit{Le Touffe\href{https://matias.ma/nsfw//}{ }}} % Easter egg
+\date{\monthname \text{ 2020}}
+
+%----------------
+% Comandos útiles
+% Tongo: \hat{}
+% Punto(derivada temporal): \dot{}
+% Doble punto: \ddot{}
+% Vector: \vec{}
+% Gradiente: \nabla
+% Derivada parcial: \partial
+% >>: \gg
+% <<: \ll
+%----------------
+
+\begin{document}
+
+\maketitle
+\selectlanguage{spanish}
+\tableofcontents
+
+\input{Cosas_Matemáticas/Coordenadas}
+\input{Cosas_Matemáticas/Tabla integrales}
+\input{Resultados_utiles/ru}
+
+%Campo eléctrico
+\input{Electroestática/Campo_electrico/campo_electrico}
+\input{Electroestática/Campo_electrico/Problemas}
+\input{Electroestática/Campo_electrico/Soluciones}
+
+% Potencial
+\input{Electroestática/Potencial_electrico/teoria_problrmas}
+\input{Electroestática/Potencial_electrico/soluciones}
+
+% Energía
+\input{Electroestática/Energia/Energía}
+\input{Electroestática/Energia/Problemas}
+\input{Electroestática/Energia/Solciones}
+
+% Conductores
+\input{Electroestática/conductores/conductores}
+\input{Electroestática/conductores/problemas}
+\input{Electroestática/conductores/Soluciones}
+
+% Dipolos
+\input{Electroestática/Dipolos/Teoria}
+\input{Electroestática/Dipolos/Problemas}
+\input{Electroestática/Dipolos/Solucones}
+
+% Corriente
+\input{Corriente/Corriente Eléctrica}
+\input{Corriente/Problemas}
+\input{Corriente/Soluciones}
+
+
+% Campo Magnético
+\input{Magnetostática/Campo_Magnetico/Campo_magnetico}
+\input{Magnetostática/Campo_Magnetico/Problemas}
+\input{Magnetostática/Campo_Magnetico/Soluciones}
+
+\end{document}

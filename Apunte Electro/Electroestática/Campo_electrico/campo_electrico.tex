@@ -1,0 +1,70 @@
+\section{Campo Eléctrico}
+
+Dada una carga puntual $q$ ubicada en $\Vec{r_q}$, se define en campo eléctrico que esta ejerce sobre un punto $\Vec{r}$ como
+
+\[\Vec{E}(\Vec{r}) = \frac{q}{4\pi\epsilon_o}\frac{\Vec{r}-\Vec{r_q}}{\parallel\Vec{r}-\Vec{r_q}\parallel^3}\]
+
+\subsection{Ecuaciones de Maxwell}
+
+Las dos primeras ecuaciones de Maxwell en electrostática son
+
+\begin{equation}
+\begin{split}
+    &\nabla\cdot\Vec{E}=\frac{\rho}{\epsilon_o}\\
+    &\nabla\times\Vec{E}=0
+\end{split}
+\nonumber
+\end{equation}
+\bigbreak
+La forma integral de la segunda ecuación es
+\[\oint_{\Gamma}\Vec{E}\cdot d\Vec{l} = 0\]
+\bigbreak
+La forma integral de la primera ecuación es la ley de Gauss.
+
+\subsection{Principio de Superposición}
+
+El campo eléctrico es aditivo, es decir, el campo que ejercen $n$ cargas sobre un mismo punto está dado por
+
+\[\Vec{E}(\Vec{r}) = \sum^n_{i=1}\Vec{E_i} = \sum^n_{i=1}\frac{q_i}{4\pi\epsilon_o}\frac{\Vec{r}-\Vec{r_i}}{\parallel\Vec{r}-\Vec{r_i}\parallel^3}\]
+\bigbreak
+En el caso de una distribución continua se tiene
+
+\[\Vec{E}(\Vec{r}) = \frac{q}{4\pi\epsilon_o}\int\frac{\Vec{r}-\Vec{r_q}}{\parallel\Vec{r}-\Vec{r_q}\parallel^3}\,dq(\Vec{r_q})\]
+\bigbreak
+donde $dq(\Vec{r_q})$ puede ser $\lambda dr$, $\sigma dS$ o $\rho dV$, con $\lambda$ la densidad de carga lineal, $\sigma$ la densidad superficial y $\rho$ la densidad volumétrica.
+
+\subsection{Ley de Coulomb}
+
+Una carga $q$ que siente un campo eléctrico $\Vec{E}$ se ve sujeta a una fuerza eléctrica, que está dada por
+
+\[\Vec{F} = q\Vec{E}\]
+
+Por acción y reacción, la fuerza que ejerce $q$ sobre la fuente del campo es $\Vec{F} = -q\Vec{E}$.
+
+\subsection{Ley de Gauss}
+
+Se dice que una superficie $\Lambda$ es cerrada si esta encierra un volumen (el cual puede ser infinito). Si la carga total en el espacio encerrado por $\Lambda$ es $Q$, la ley de Gauss garantiza que se satisface la igualdad
+
+\[\oint_{\Lambda} \Vec{E}\cdot d\Vec{S} = \frac{Q}{\epsilon_o}\]
+
+Donde $\Vec{E}$ es el campo eléctrico generado por $Q$, en esta integral en específico se está evaluando en la superficie. Esta es la forma integral de la primera ecuación de Maxwell. El círculo en la integral sólo indica que $\Lambda$ es cerrada, de por sí no altera el cálculo.\\
+
+La ley de Gauss permite determinar el valor del campo eléctrico si este presenta simetría, es decir, cumple que $\Vec{E}(\Vec{r}) = E(n)\hat{n}$, con $\Vec{n} = n\hat{n}$ un vector normal a la superficie. En este caso se verifica que
+
+\[\frac{Q}{\epsilon_o} = \oint_{\Lambda} \Vec{E}\cdot d\Vec{S} = \int_{\Lambda} E(n)\hat{n}\cdot dS\hat{n} = \int_{\Lambda} E(n) \,dS\]
+
+Luego, tomando $\Lambda$ tal que $n$ sea constante, se tiene
+
+\[\int_{\Lambda} E(n)\,dS = E(n)\int_{\Lambda}\,dS\]
+
+De forma que, si el área de $\Lambda$ es $A$, el campo eléctrico en $\Lambda$ es
+
+\[\Vec{E}(\Vec{r}) = \frac{Q}{A\epsilon_o}\hat{n}\]
+
+Para determinar si existe simetría basta ver que, dado un punto $p$ arbitrario en el espacio, la suma de todos vectores que conectan los puntos de la superficie a $p$ resulta perpendicular a la misma.
+\bigbreak
+La simetría se cumple en esferas, con $\hat{n}=\hat{r}$; cilindros de largo infinito, con $\hat{n}=\hat{\rho}$; y planos infinitos, con $\hat{n}=\hat{z}$. En los 3 casos se asume que el sistema de coordenadas es elegido acorde a la superficie.
+
+
+
+\newpage

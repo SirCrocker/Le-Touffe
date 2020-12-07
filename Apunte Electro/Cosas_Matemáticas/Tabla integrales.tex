@@ -1,0 +1,77 @@
+\section{Tabla Primitivas}
+\textit{Se ignora la constante de integración para facilitar la visualización.}
+
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    &\int\frac{1}{x}dx  = \ln{|x|} \\
+    &\int e^{f(x)}f'(x)dx  = e^{f(x)} \\
+    &\int \ln{x}dx  = x\ln{x}-x \\
+    &\int x\ln{x}dx  = \frac{1}{4}x^2(2\ln{x}-1) \\
+    &\int\frac{1}{x^2+a^2}\,dx  = \frac{1}{a}\arctan{\frac{1}{a}}\\
+    &\int\frac{1}{\sqrt{x^2-a^2}}\,dx  = \sinh^{-1}{\frac{x}{a}}\\
+    &\int\frac{1}{\sqrt{a^2-x^2}}\,dx  = \arcsin{\frac{x}{a}}\\
+    &\int \frac{1}{\sqrt{x^2+a^2}}\,dx  = \cosh^{-1}{\frac{x}{a}}\\
+    &\int\frac{1}{x\sqrt{x^2-a^2}}\,dx  = \frac{1}{a}\arctan{\left(\frac{\sqrt{x^2-a^2}}{a}\right)}\\
+    &\int\frac{1}{x\sqrt{x^2+a^2}}\,dx  = -\frac{1}{a}\ln{\left(\frac{
+    a+\sqrt{x^2+a^2}}{x}\right)}\\
+    &\int\frac{1}{x\sqrt{a^2-x^2}}\,dx  = -\frac{1}{a}\ln{\left(\frac{a+\sqrt{a^2-x^2}}{x}\right)}\\
+    &\int\frac{1}{x^2-a^2}\,dx  = \frac{\ln{|x-a|}-\ln{|x+a|}}{2a}\\
+    &\int\frac{1}{a^2-x^2}\,dx  = \frac{\ln{|x+a|}-\ln{|x-a|}}{2a}\\
+    &\int\frac{1}{(1+x^2)^2}\,dx  = \frac{x}{2(1+x^2)}+\frac{1}{2}\arctan{x}\\
+    &\int|x|\,dx  = \frac{x\abs{x}}{2}\\
+    &\int \sin^3{x}\,dx = \frac{1}{4}\left(\frac{\cos{3x}}{3}-3\cos{x}\right)\\
+    &\int \cos^3{x}\,dx = \frac{1}{4}\left(\frac{\sin{3x}}{3}+3\sin{x}\right)\\
+    %cabe 1 más
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\begin{equation}
+\begin{split}
+    &\int \sin{x}\,dx = -\cos{x} \\
+    &\int \cos{x}\,dx = \sin{x} \\
+    &\int\tan{x}\,dx  = -\ln{|\cos{x}|} \\
+    &\int\sec{x}\,dx  = \ln{|\sec{x}+\tan{x}|}\\
+    &\int\csc{x}\,dx  = \ln{|\csc{x}-\cot{x}|}\\
+    &\int\tan^2{x}\,dx  = \tan{x}-x \\
+    &\int\cot^2{x}\,dx  = -\cot{x}-x \\
+    &\int\cos^2{(ax)}\,dx  = \frac{x}{2}+\frac{\sin{(2ax)}}{4a}\\
+    &\int\sin^2{(ax)}\,dx  = \frac{x}{2}-\frac{\sin{(2ax)}}{4a}\\
+    &\int\cosh^2{(ax)}\,dx  = \frac{x}{2}+\frac{\sinh{(2ax)}}{4a}\\
+    &\int\sinh^2{(ax)}\,dx  = \frac{\sinh{(2ax)}}{4a}-\frac{x}{2}\\
+    &\int\frac{1}{\cosh{x}}\,dx  = 2\arctan{e^x}\\
+    &\int\frac{1}{\sinh{x}}\,dx  = \ln{|e^x-1|}-\ln{|e^x+1|}\\
+    &\int\sqrt{a^2-x^2}\,dx  = \frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin{\frac{x}{a}}\\
+    &\int\sqrt{a^2+x^2}\,dx = \frac{x}{2}\sqrt{x^2+a^2}+\frac{a^2}{2}\ln{(x~\sqrt{x^2+a^2})}\\
+    &\int\sqrt{x^2-a^2}\,dx = \frac{x}{2}\sqrt{x^2-a^2}-\frac{a^2}{2}\ln{(x+\sqrt{x^2-a^2})}\\
+    &\int\frac{1}{(a^2+(b-x)^2)^{3/2}}\,dx=\frac{x-b}{a\sqrt{a^2+(b-x)^2}}\\
+    %caben 1 ó 2 más
+\end{split}
+\nonumber
+\end{equation}
+\end{minipage}
+\newpage
+\begin{equation}
+    \begin{split}
+    &\int\frac{x}{\sqrt{a-bx}}\,dx= \frac{-2a}{b^2}\sqrt{a-bx}+\frac{2}{3b^2}(a-bx)^{3/2}\\
+    &\int\frac{x}{\sqrt{ax^2 + bx +c}}\,dx = \frac{1}{a}\sqrt{ax^2 +bx +c} - \frac{b}{2a^{3/2}}\ln{\abs{2ax +b+2\sqrt{a(ax^2+bx+c)}}}\\
+    &\int\frac{x}{(x^2+a^2)^{3/2}}\,dx = -\frac{1}{\sqrt{x^2 + a^2}} \quad \text{(Común en Electromagnetismo)}
+    \end{split}
+    \nonumber
+\end{equation}
+Para funciones de forma $\frac{Ax+B}{ax^2+bx+c}$, se tiene que:
+
+\begin{itemize}
+    \item Si $4ac>b^2$
+    \[\int\frac{Ax+B}{ax^2+bx+c}\,dx = \frac{A}{2a}\ln{(ax^2+bx+c)}+\frac{2aB-bA}{a\sqrt{4ac-b^2}}\arctan{\left(\frac{2ax+b}{\sqrt{4ac-b^2}}\right)}\]
+    \item Si $4ac<b^2$ %este puede que haya que revisarlo
+    \[\int\frac{Ax+B}{ax^2+bx+c}\,dx = \frac{1}{2\sqrt{b^2-4ac}}
+    \left(\Omega_{-}+\,\Omega_{+}\right)\]
+    donde
+    \[\Omega_{-} = (2B-A(b-\sqrt{b^2-4ac}))\ln{(2ax+b-\sqrt{b^2-4ac})}\]
+    \[\Omega_{+} = (A(b+\sqrt{b^2-4ac})-2B)\ln{(2ax+b+\sqrt{b^2-4ac})}\]
+\end{itemize}
+
+\newpage

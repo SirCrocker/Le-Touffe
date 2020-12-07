@@ -1,0 +1,122 @@
+\section{Campo Magnético}
+
+Una carga puntual $q$ con posición $\Vec{r}_q$ que se desplaza con velocidad $\Vec{v}_q$, produce un campo magnético dado por
+
+\[\Vec{B}(\Vec{r})=\frac{\mu_o}{4\pi}
+\frac{q\Vec{v}_q\times(\Vec{r}-\Vec{r}_q)}{\|\Vec{r}-\Vec{r}_q\|^3}\]
+
+donde la permeabilidad del vacío, $\mu_o$, es una constante que verifica $\frac{1}{\epsilon_o\mu_o}=c$, con $c$ la velocidad de la luz.
+
+\subsection{Ley de Biot-Savart}
+
+Para una distribución de cargas continua, el campo magnético es
+
+\[\Vec{B}=\frac{\mu_o}{4\pi}\int\Vec{J}(\Vec{r}_q)\times
+\frac{(\Vec{r}-\Vec{r}_q)}{\|\Vec{r}-\Vec{r}_q\|^3}\,d\V_q\]\\
+% La ecuación de arriba es la Ley de Biot-Savart
+si bien $d\V_q$ es un diferencial de volumen, la definición es también válida para distribuciones superficiales ($d\Vec{S}_q$) y lineales ($d\Vec{r}_q$). Para casos superficiales la densidad de corriente se suele escribir como $\Vec{K} = \sigma \vec{v}$ y en lineales se usa la intensidad con su dirección ($\Vec{I}dr = Id\Vec{r}$).
+
+\subsection{Ecuaciones de Maxwell}
+
+La tercera y cuarta ecuación de Maxwell se aplican en magnetoestática, y son
+
+\begin{equation}
+\begin{split}
+   \nabla\cdot \Vec{B} &= 0\\
+    \nabla \times \Vec{B} &= \mu_0\Vec{J}
+\end{split}
+\nonumber
+\end{equation}
+
+La forma integral de la primera ecuación es
+\[ \oint\Vec{B}\cdot d\vec{s} = 0 \]
+
+\subsubsection{Ley de Ampere}
+
+La forma integral de la segunda ecuación se conoce como la Ley de Ámpere, esta es
+
+\[ \oint \vec{B}\cdot d\vec{l} = \mu_0\int \vec{J}\cdot d\vec{s} \]
+
+Para una superficie regular orientable $\Lambda$, con borde $\partial\Gamma$, se cumple que
+
+\[\oint_{\partial\Lambda}\vec{B}\cdot d\vec{l} = \mu_0\int_\Lambda \vec{J}\cdot d\vec{s} = \mu_0I_{\text{enc}}\]
+
+donde $I_{\text{enc}}$ es la intensidad de corriente que pasa por $\Lambda$. Dado que $I$ no se anula (en tal caso no existiría $\vec{B}$), se concluye que las lineas de campo magnético son siempre cerradas, en concreto, se cierran en torno a la corriente.\\
+
+Bajo condiciones de simetría, simlilar a como sucede con la ley de Gauss, se puede usar la ley de Ampere para determinar el campo magnético, en sólo ciertas configuraciones (o figuras geométricas), como:
+\begin{itemize}
+    \item Líneas rectas infinitas
+    \item Planos infinitos
+    \item Solenoides infinitos 
+    
+    
+    (también visualizable como un cilindro con corriente superficial con dirección en $\hat \phi$)
+    \item Toroides
+\end{itemize}
+
+
+\subsection{Fuerza Magnética}
+
+Un campo magnético $\Vec{B}$ produce sobre una carga puntual $q$ en movimiento, con velocidad $\Vec{v}$, una fuerza dada por
+
+\[\Vec{F}_m=q\Vec{v}\times\Vec{B}\]
+\bigbreak
+Para una distribución de cargas continua, la fuerza magnética es
+
+\[\Vec{F}_m=\int\Vec{J}\times\Vec{B}\,d\V\]
+
+Al igual que como pasa con $\Vec{B}$, $d\V$ puede reemplazarse por $d\Vec{S}$ o $d\Vec{r}$.\\
+
+La fuerza magnética \textbf{no} realiza trabajo sobre una partícula.
+% El trabajo realizado por la fuerza magnética sobre una partícula es siempre cero.
+
+
+\subsection{Fuerza de Lorentz}
+
+Se denomina fuerza de Lorentz a la fuerza eléctrica total
+
+\[\Vec{F}=q\Vec{E}+q\Vec{v}\times\Vec{B}\]
+
+\subsection{Potencial Vectorial}
+
+Se define el vector
+
+\[\Vec{A}=\frac{\mu_o}{4\pi}\int\frac{\Vec{J}(\Vec{r}_q)}{\|\Vec{r}-\Vec{r}_q\|}\,d\V_q\]
+
+$\Vec{A}$ es un potencial vectorial de $\Vec{B}$, puesto que se verifica que
+
+\[\Vec{B}=\nabla\times\Vec{A}\]
+
+% Cordero define A ligeramente distinto, pero me da pereza revisar las justificaciones
+
+\subsection{Dipolo Magnético}
+
+Para una espira por la que fluye corriente eléctrica, se define el momento dipolar magnético como
+
+\[\Vec{m}=I\Vec{S}\]
+
+Para distribuciones continuas se tiene
+
+\begin{eqit}
+    &\Vec{m}_l = \frac{I}{2}\oint\Vec{r}\times d\Vec{r}\\
+    &\Vec{m}_S = \frac{1}{2}\int\Vec{r}\times \Vec{K}\,dS\\
+    &\Vec{m}_V = \frac{1}{2}\int\Vec{r}\times \Vec{J}\,d\V\\
+\end{eqit}\\
+
+A grandes distancias se verifica que
+
+\begin{eqit}
+    &\Vec{A} = \frac{\mu_o}{4\pi}
+    \frac{\Vec{m}\times\Vec{r}}{r^3}\\
+    &\Vec{B}=\frac{\mu_o}{4\pi}\frac{3\lados{(}{\Vec{m}\cdot
+    \Vec{r}}\Vec{r}-r^2\Vec{m}}{r^5}\\
+\end{eqit}\\
+
+Para una espira lo suficientemente pequeña, la fuerza magnética y el torque sobre el dipolo son
+
+\begin{eqit}
+    &\Vec{F} = \nabla\lados{(}{\Vec{m}\cdot\Vec{B}_{ext}}\\
+    &\Vec{\tau} = \Vec{m}\times\Vec{B}_{ext}\\
+\end{eqit}
+
+\newpage

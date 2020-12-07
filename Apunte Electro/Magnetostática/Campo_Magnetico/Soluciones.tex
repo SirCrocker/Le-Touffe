@@ -1,0 +1,297 @@
+\subsection{Soluciones}
+
+\begin{solucion}{1}
+
+\ics a
+La fuerza que siente la partícula está dada por
+
+\[\Vec{F}=q\Vec{E}+q\Vec{v}\times\Vec{B}\]
+
+Estableciendo que el campo eléctrico está en dirección $\hat{x}$, el campo magnético en dirección $\hat{y}$ y que la partícula se ubica inicialmente en el origen, se tiene
+
+\begin{eqit}
+    \Vec{F}&=qE\hat{x}+q\Vec{v}\times B\hat{y}\\
+    &= q(E-v_zB)\hat{x} + qv_xB\hat{z}\\
+\end{eqit}
+
+Por segunda ley d Newton se sabe que $\Vec{F}=m\Vec{a}$, de lo cual se deducen las ecuaciones
+
+\begin{eqit}
+    &ma_x=q(E-v_zB)\\
+    &ma_z=qv_xB\\
+    &a_y=0\\
+\end{eqit}
+
+Como $a_y = 0$, $v_y$ es constante y puesto que se parte del reposo, $v_y = y = 0$. Definiendo $\omega = \frac{qB}{m}$, tiene el siguiente sistema
+
+\[\begin{pmatrix}a_x\\a_z\end{pmatrix}=
+\begin{pmatrix}0&-\omega\\\omega&0\end{pmatrix}
+\begin{pmatrix}v_x\\v_z\end{pmatrix}+
+\begin{pmatrix}\frac{qE}{m}\\0\end{pmatrix}
+= A\begin{pmatrix}v_x\\v_z\end{pmatrix}+C\]
+
+cuya matriz fundamental es
+
+\[\Phi(t) = e^{At} = \begin{pmatrix}
+\cos{\omega t} & -\sin{\omega t}\\
+\sin{\omega t} & \cos{\omega t}
+\end{pmatrix}\]
+
+luego,
+
+\begin{eqit}
+    \begin{pmatrix}v_x\\v_z\end{pmatrix} &= \Phi(t)\begin{pmatrix}0\\0\end{pmatrix}+\Phi(t)\int^t_0
+    \Phi^{-1}(t')C\,dt'\\
+    &=\Phi(t)\int^t_0\Phi^{T}(t')C\,dt'\\
+    &=\frac{E}{B}\begin{pmatrix}\sin{\omega t}\\
+    1-\cos{\omega t}\end{pmatrix}
+\end{eqit}
+
+Con esto, sabiendo que el movimiento comienza en el origen, se tiene que
+
+\begin{eqit}
+    x &= \int^t_0v_x\,dx\\
+    &= \frac{E}{B\omega}(1-\cos{\omega t})\\
+    \\
+    z &= \int^t_0v_z\,dz\\
+    &= \frac{E}{B\omega}(t-\sin{\omega t})\\
+\end{eqit}
+
+Finalmente la posición de la partícula es
+
+\[\Vec{r}(t)= \frac{E}{B\omega}\lados{(}{(1-\cos{\omega t})\hat{x}+(t-\sin{\omega t})\hat{z}}\]
+
+\ics b
+La capacitancia del sistema es
+
+\[C = \frac{\epsilon_oS}{h}\]
+
+con esta, estableciendo $x$ la dirección normal a las placas y que la placa positiva está en $x=-h$, se pude obtener el campo eléctrico
+
+\begin{eqit}
+    &Q = CV = \frac{\e_oSV}{h}\\
+    &\sigma = \frac{Q}{S} = \frac{\e_oV}{h}\\
+    &\Vec{E} = \frac{\sigma}{\e_o}\hat{x} = \frac{V}{h}\hat{x}\\
+\end{eqit}
+
+Usando el resultado obtenido en $a$, se tiene que
+
+\begin{eqit}
+    \Vec{r}_e &= \frac{V}{Bh\omega}\lados{(}{(1-\cos{\omega t})\hat{x}+(t-\sin{\omega t})\hat{z}}\\
+\end{eqit}
+
+La componente en $x$ de la posición está acotada entre $\frac{2V}{Bh\omega}$ y 0, por lo que se debe cumplir que $\frac{2V}{Bh\omega}>-h$
+
+\begin{eqit}
+    \frac{2V}{Bh\omega}>-h &\Rightarrow h < \frac{-2V}{Bh\omega}\\
+    &\Rightarrow h < \frac{2Vm}{eB^2h}\\
+    &\Rightarrow B^2 < \frac{2Vm}{h^2e}\\
+    &\Rightarrow -\sqrt{\frac{2Vm}{h^2e}}<B<
+    \sqrt{\frac{2Vm}{h^2e}}\\
+\end{eqit}
+
+\end{solucion}
+
+% Este problema está en el Griffiths, pág 246.
+\begin{solucion}{2}
+
+\ics a
+En esféricas la velocidad es
+
+\[\Vec{v} = R\omega\sin\theta\,\hat{\phi}\]
+
+y la densidad de corriente superficial está dada por
+
+\[\Vec{K} = \rho R\omega\sin\theta\,\hat{\phi}\]
+
+\ics b
+El momento dipolar magnético de la esfera es
+
+\begin{eqit}
+    \Vec{m} &= \frac{1}{2}\int\Vec{r}\times\Vec{K}\,dS\\
+    &= \frac{-1}{2}\int^\pi_0\int^{2\pi}_0\rho
+    R^4\omega\sin^2\theta\,\hat{\theta}\,d\phi d\theta\\
+    &= \pi\rho R^4\omega\int^\pi_0\sin^3\theta\,\hat{z}
+    \,d\theta\\
+    &= \frac{4\pi\rho R^4\omega}{3}\hat{z}\\
+\end{eqit}
+
+A grandes distancias, el potencial vectorial se puede aproximar por
+
+\begin{eqit}
+    \Vec{A} &= \frac{\mu_o}{4\pi r^3}\Vec{m}\times\Vec{r}\\
+    &= \frac{\mu_o\rho R^4\omega}{3r^3}(r\sin{\theta}\cos{\phi}
+    \hat{y}-r\sin{\theta}\sin{\phi}\hat{x})\\
+    &= \frac{\mu_o\rho R^4\omega\sin{\theta}}{3r^2}\hat{\phi}\\
+\end{eqit}
+
+\ics c
+A grandes distancias el campo magnético está dado por
+
+\begin{eqit}
+    \Vec{B} &= \nabla\times\Vec{A}\\
+    &= \frac{\mu_o\rho R^4\omega}{3r^3}(\cos{\theta}\hat{r}+
+    \sin{\theta}\hat{\theta})\\
+\end{eqit}
+% Para la Preg de la tarea, encontre está pagina que usan unas sumas de riemman, http://laplace.us.es/wiki/index.php/Campo_de_un_solenoide_cil%C3%ADndrico
+
+\end{solucion}
+
+\begin{solucion}{3}
+
+\ics a
+El campo magnético en el eje está dado por
+
+\begin{eqit}
+    \Vec{B} &= \frac{\mu_o}{4\pi}\int I\hat{\phi}\times
+    \frac{z\hat{z}-a\hat{\rho}}{(z^2+a^2)^{3/2}}\,dr\\
+    &= \frac{\mu_o Ia^2}{4\pi(z^2+a^2)^{3/2}}\int^{2\pi}_0
+    z\hat{\rho}+a\hat{z}\,d\phi\\
+    &= \frac{\mu_o Ia^2}{2(z^2+a^2)^{3/2}}\hat{z}\\
+\end{eqit}
+
+\ics b % Suponiendo que la corriente está en phi
+Del resultado de $a)$ se deduce que, para una espira de radio $a$ centrada en $z_i\hat{z}$, el campo magnético es
+
+\[\Vec{B} = \frac{\mu_o Ia^2}{2((z-z_i)^2+a^2)^{3/2}}\hat{z}\]
+
+Con esto, por principio de superposición, el campo en el eje del solenoide es
+
+\[\Vec{B} = \frac{\mu_o Ia^2}{2}\sum^{N-1}_{i=0}
+\frac{1}{((z-\frac{h}{N}i)^2+a^2)^{3/2}}\hat{z}\]
+
+% Suponiendo que es una hélice. Integral de linea | debi hacer esto desde un principio
+
+La solenoide está parametrizada por
+
+\[\Vec{r}(\phi) = a\hat{\rho}+\frac{n}{2\pi}\phi\hat{z}\]
+
+\[\frac{d\Vec{r}}{d\phi}=a\hat{\phi}+\frac{n}{2\pi}\hat{z}\]
+
+El campo magnético generado por el solenoide en el eje $z$ está dado por
+
+\begin{eqit}
+    \Vec{B} &= \frac{\mu_o}{4\pi}\int I\lados{(}{\frac{n}{2\pi}\hat{z}+a\hat{\phi}}\times
+    \frac{(z-z')\hat{z}-a\hat{\rho}}{((z-z')^2+a^2)^{3/2}}
+    \,dr\\
+    &=\frac{\mu_o}{4\pi}\int\frac{I}{((z-z')^2+a^2)^{3/2}}
+    \lados{(}{\frac{-na}{2\pi}\hat{\phi}+a\lados{(}{z-
+    z'}\hat{\rho}+a^2\hat{z}}\,dr\\
+    &=\frac{\mu_oI\sqrt{\frac{n^2}{4\pi^2}+a^2}}{4\pi}
+    \int^{2\pi N}_0\frac{1}{\lados{(}{\lados{(}{z-
+    \frac{n}{2\pi}\phi}^2+a^2}^{3/2}}
+    \lados{(}{\frac{-na}{2\pi}\hat{\phi}+a\lados{(}{z-
+    \frac{n}{2\pi}\phi}\hat{\rho}+a^2\hat{z}}\,d\phi\\
+    &=\frac{\mu_oI\sqrt{\frac{n^2}{4\pi^2}+a^2}}{4\pi}
+    \int^{2\pi N}_0\frac{a^2}{\lados{(}{\lados{(}{z-
+    \frac{n}{2\pi}\phi}^2+a^2}^{3/2}}\hat{z}\,d\phi\\
+    &=\frac{\mu_oI\sqrt{\frac{n^2}{4\pi^2}+a^2}}{4\pi}
+    \frac{8a^2\pi^3}{n^3}
+    \int^{2\pi N}_0\frac{a^2}{\lados{(}{\lados{(}
+    {\frac{2\pi}{n}z-\phi}^2+\frac{4\pi^2}{n^2}a^2}^{3/2}}
+    \hat{z}\,d\phi\\
+    &=\frac{2\mu_oIa^2\pi^2\sqrt{\frac{n^2}{4\pi^2}+a^2}}{n^3}
+    \frac{\phi-\frac{2\pi}{n}z}{\frac{2\pi}{n}a\sqrt{\lados{(}{\frac{2\pi}{n}z-\phi}^2+\frac{4\pi^2}{n^2}a^2}}\Big|^{2\pi N}_0\\
+    &=\frac{\mu_oIa\pi\sqrt{\frac{n^2}{4\pi^2}+a^2}}{n^2}
+    \lados{(}{\frac{nN-z}{\sqrt{(z-nN)^2+a^2}}+
+    \frac{z}{\sqrt{z^2+a^2}}}
+\end{eqit}
+
+\ics c % Suma de Riemman ¿? | no creo, n se mantiene constante. Intente hacerlo como una serie, pero no pude encontrar el límite, también recordé que, al menos en diferencial, hay métodos para determinar si converge, pero no para sacar el límite.
+
+\ics d
+La intensidad $I$ se puede asociar a una densidad superficial
+
+\[\Vec{K} = K_\phi\hat{\phi}+K_z\hat{z}\]
+
+Por principio de superposición, se puede ver el campo magnético como la suma del generado por un cilindro con densidad de corriente $K_\phi\hat{\phi}$ y otro con $K_z\hat{z}$. Considerando un camino circular concéntrico al cilindro, se obtiene que
+
+\[I = 2\pi aK_\phi\]
+
+con un camino rectangular con un lado paralelo a $z$ de largo $h$ al interior del cilindro, se obtiene que
+
+\[IN = K_zh\]
+
+de lo que se deduce que
+
+\begin{eqit}
+    &K_\phi = \frac{I}{2\pi a}\\
+    &K_z = \frac{IN}{h}\\
+\end{eqit}
+
+Por (\ref{BcilindroPhi}) y (\ref{BcilindroZ}) se concluye que
+
+\begin{eqit}
+    r < a:\quad &\Vec{B} = \mu_o\frac{IN}{h}\hat{z}\\
+    a<r:\quad &\Vec{B} = \mu_o\frac{I}{2\pi a}\hat{\phi}\\
+\end{eqit}\\
+
+\end{solucion}
+
+\begin{solucion}{4}
+
+\ics a
+Por regla de la mano derecha, el campo de un cilindro está en dirección $\hat{\phi}$, además, por simetría no depende de $z$ ni de $\phi$, de modo que
+
+\[\Vec{B} = B(\rho)\hat{\phi}\]
+
+Por ley de Ampere, tomando un camino circular de radio $\rho<R$ concéntrico al cilindro, se tiene
+
+\begin{eqit}
+    \oint\Vec{B}\cdot d\Vec{r} = \mu_o\int\Vec{J}\cdot d\Vec{S}
+    &\Leftrightarrow 2\pi\rho B = \mu_oJ\pi\rho^2\\
+    &\Leftrightarrow \Vec{B} = \frac{\mu_oJ\rho}{2}\hat{\phi}\\
+\end{eqit}
+
+Así, para un mismo punto en la intersección, el campo eléctrico de cada cilindro es
+
+\begin{eqit}
+    &\Vec{B}_{+} = \frac{\mu_oJ\rho_{+}}{2}\hat{\phi}_{+}\\
+    &\Vec{B}_{-} = -\frac{\mu_oJ\rho_{-}}{2}\hat{\phi}_{-}\\
+\end{eqit}
+
+donde se cumple que
+
+\begin{eqit}
+    \rho_{+}\sin{(\phi_{+})} &= \rho_{-}\sin{(\pi-\phi_{-})}\\
+    &= \rho_{-}\sin{(\phi_{-})}
+\end{eqit}
+\begin{eqit}
+    a &= \rho_{-}\cos{(\pi-\phi_{-})}+\rho_{+}\cos{(\phi_{+})}\\
+    &= -\rho_{-}\cos{(\phi_{-})}+\rho_{+}\cos{(\phi_{+})}\\
+\end{eqit}
+
+luego, el campo total es
+
+\begin{eqit}
+    \Vec{B} &= \Vec{B}_{+} + \Vec{B}_{-}\\
+    &= \frac{\mu_oJ\rho_{+}}{2}(-\sin{(\phi_{+})}\hat{x}+
+    \cos{(\phi_{+})}\hat{y})-\frac{\mu_oJ\rho_{-}}{2}
+    (-\sin{(\phi_{-})}\hat{x}+\cos{(\phi_{-})}\hat{y})\\
+    &= \frac{\mu_o}{2}J((\rho_{-}\sin(\phi_{-})-\rho_{+}
+    \sin(\phi_{+}))\hat{x}+(\rho_{+}\cos(\phi_{+})-\rho_{-}
+    \cos(\phi_{-}))\hat{y})\\
+    &= \frac{\mu_o}{2}Ja\hat{y}
+\end{eqit}
+
+\ics b
+Para puntos alejados, el sistema se puede aproximar a dos cilindros concéntricos. Es directo ver que en este caso el campo magnético se anula.
+
+\end{solucion}
+
+\begin{solucion}{5}
+
+\ics a
+Por (\ref{Bplano}) se tiene que
+
+\[\Vec{B}=B(x)\hat{y}\]
+
+por la cuarta ecuación de Maxwell en magnetostática, se verifica que
+
+\[\mu_o\Vec{J} = \nabla\times\Vec{B} = \parfrac{B}{x}\hat{z}\]
+
+luego,
+
+\end{solucion}
+
+\newpage
