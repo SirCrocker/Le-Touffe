@@ -7,7 +7,7 @@ Está disponible tanto la descarga directa PDF (Versión GitHub)*, como la direc
 
 ### Apunte Cálculo
 
-[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Apunte_Calculo.pdf) | 
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v20.12.7/Apunte_Calculo.pdf) | 
 [Dirección Overleaf](https://es.overleaf.com/read/zgqpccknccbh)
 
 Incluye:
@@ -18,7 +18,7 @@ Incluye:
 
 ### Apunte Electromagnetismo
 
-[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Apunte_Electro.21.34.37.pdf) | 
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v20.12.7/Apunte_Electro.pdf) | 
 [Dirección Overleaf](https://es.overleaf.com/read/jgrbxgybxdvb)
 
 Incluye:
@@ -30,18 +30,18 @@ Incluye:
 
 ### Apunte Economía
 
-[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v5.11.20/Apunte_Econo.pdf) | 
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v20.12.7/Apunte_Econo_2020.pdf) | 
 [Dirección Overleaf](https://www.overleaf.com/read/bhgfgpwdxwhf)
 
 Incluye:
-- Módulos del 0 al 8
+- Módulos del 0 al 9
 - Links a videos EOL
 - Glosario de términos
 - 1 Ejemplo
 
 ### Apunte termodinámica
 
-[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/12.11.20/Termodinamica-4.pdf) | 
+[Versión GitHub (.PDF)](https://github.com/SirCrocker/Le-Touffe/releases/download/v20.12.7/Termodinamica.pdf) | 
 [Dirección Overleaf](https://www.overleaf.com/read/fjkwbxggwtvs)
 
 Incluye:
