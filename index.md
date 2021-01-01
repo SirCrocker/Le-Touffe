@@ -26,7 +26,7 @@ Incluye:
 - Sistema de Coordenadas
 - Tabla de Primitivas
 - Teoría al día
-- Ejercicios con solución para todos los temas
+- Ejercicios con solución para casi todos los temas
 
 ### Apunte Economía
 
@@ -34,7 +34,7 @@ Incluye:
 [Dirección Overleaf](https://www.overleaf.com/read/bhgfgpwdxwhf)
 
 Incluye:
-- Módulos del 0 al 9
+- Módulos del 0 al 11
 - Links a videos EOL
 - Glosario de términos
 - 1 Ejemplo
